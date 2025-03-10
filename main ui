@@ -4,11 +4,6 @@ if _G.hybridloaded then
     warn("The GUI is already running!")
     return
 end
-
--- Monstrum's Gui to Lua\n-- Version: 3.2
-
--- Instances:
-
 local Hybrid = Instance.new("ScreenGui")
 local BackgroundFrame = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
