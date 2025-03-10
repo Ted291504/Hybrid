@@ -778,7 +778,7 @@ ImageButton.Image = "rbxassetid://72310455670962"
 
 -- Scripts:
 
-local function IBBX_script() -- Execute.LocalScript 
+local function ZTVWAJN_script() -- Execute.LocalScript 
 	local script = Instance.new('LocalScript', Execute)
 
 	local button = script.Parent
@@ -788,8 +788,8 @@ local function IBBX_script() -- Execute.LocalScript
 		loadstring(textbox.Text)()
 	end)
 end
-coroutine.wrap(IBBX_script)()
-local function VFOO_script() -- Clear.LocalScript 
+coroutine.wrap(ZTVWAJN_script)()
+local function KWKBYCT_script() -- Clear.LocalScript 
 	local script = Instance.new('LocalScript', Clear)
 
 	local button = script.Parent
@@ -799,8 +799,8 @@ local function VFOO_script() -- Clear.LocalScript
 		textbox.Text = ""
 	end)
 end
-coroutine.wrap(VFOO_script)()
-local function NYRQZ_script() -- Copy.LocalScript 
+coroutine.wrap(KWKBYCT_script)()
+local function TRQJV_script() -- Copy.LocalScript 
 	local script = Instance.new('LocalScript', Copy)
 
 	local button = script.Parent
@@ -810,8 +810,8 @@ local function NYRQZ_script() -- Copy.LocalScript
 		setclipboard(textbox.Text)
 	end)
 end
-coroutine.wrap(NYRQZ_script)()
-local function OVVDYK_script() -- Paste.LocalScript 
+coroutine.wrap(TRQJV_script)()
+local function KRJXKYR_script() -- Paste.LocalScript 
 	local script = Instance.new('LocalScript', Paste)
 
 	local button = script.Parent
@@ -821,8 +821,8 @@ local function OVVDYK_script() -- Paste.LocalScript
 		textbox.Text = getclipboard()
 	end)
 end
-coroutine.wrap(OVVDYK_script)()
-local function QYWIDE_script() -- FPSTitle.LocalScript 
+coroutine.wrap(KRJXKYR_script)()
+local function HJCH_script() -- FPSTitle.LocalScript 
 	local script = Instance.new('LocalScript', FPSTitle)
 
 	local textLabel = script.Parent
@@ -840,8 +840,8 @@ local function QYWIDE_script() -- FPSTitle.LocalScript
 	end)
 	
 end
-coroutine.wrap(QYWIDE_script)()
-local function TENNY_script() -- InfYieldBTN.LocalScript 
+coroutine.wrap(HJCH_script)()
+local function WFORN_script() -- InfYieldBTN.LocalScript 
 	local script = Instance.new('LocalScript', InfYieldBTN)
 
 	local button = script.Parent
@@ -850,8 +850,8 @@ local function TENNY_script() -- InfYieldBTN.LocalScript
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/edgeiy/infiniteyield/master/source"))()
 	end)
 end
-coroutine.wrap(TENNY_script)()
-local function FMXOCOC_script() -- UNCScriptBTN.LocalScript 
+coroutine.wrap(WFORN_script)()
+local function GDBMR_script() -- UNCScriptBTN.LocalScript 
 	local script = Instance.new('LocalScript', UNCScriptBTN)
 
 	local button = script.Parent
@@ -860,8 +860,8 @@ local function FMXOCOC_script() -- UNCScriptBTN.LocalScript
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/unified-naming-convention/NamingStandard/refs/heads/main/UNCCheckEnv.lua"))()
 	end)
 end
-coroutine.wrap(FMXOCOC_script)()
-local function SYVSSM_script() -- DexBTN.LocalScript 
+coroutine.wrap(GDBMR_script)()
+local function BAMBG_script() -- DexBTN.LocalScript 
 	local script = Instance.new('LocalScript', DexBTN)
 
 	local button = script.Parent
@@ -869,8 +869,8 @@ local function SYVSSM_script() -- DexBTN.LocalScript
 		loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Dex%20Explorer.txt"))()
 	end)
 end
-coroutine.wrap(SYVSSM_script)()
-local function EYAEVTP_script() -- PINGTitle.LocalScript 
+coroutine.wrap(BAMBG_script)()
+local function EPJHIOS_script() -- PINGTitle.LocalScript 
 	local script = Instance.new('LocalScript', PINGTitle)
 
 	local textLabel = script.Parent
@@ -882,8 +882,8 @@ local function EYAEVTP_script() -- PINGTitle.LocalScript
 		textLabel.Text = "Current PING : " .. math.floor(ping) .. " ms"
 	end)
 end
-coroutine.wrap(EYAEVTP_script)()
-local function DQEC_script() -- TextBox_2.LocalScript 
+coroutine.wrap(EPJHIOS_script)()
+local function XZHEWN_script() -- TextBox_2.LocalScript 
 	local script = Instance.new('LocalScript', TextBox_2)
 
 	local textBox = script.Parent
@@ -906,24 +906,10 @@ local function DQEC_script() -- TextBox_2.LocalScript
 		scrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
 	end
 	
-	local function createRoundedFrame(parent, size, position)
-		local frame = Instance.new("Frame")
-		frame.Size = size
-		frame.Position = position
-		frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-		frame.BorderSizePixel = 0
-		frame.Parent = parent
-	
-		local corner = Instance.new("UICorner")
-		corner.CornerRadius = UDim.new(0, 8)
-		corner.Parent = frame
-	
-		return frame
-	end
-	
 	local function searchScripts(query)
 		clearResults()
 	
+		query = string.gsub(query, " ", "%%20")
 		local url = "https://scriptblox.com/api/script/search?q=" .. query
 		local success, response = pcall(function()
 			return game:HttpGet(url)
@@ -939,11 +925,6 @@ local function DQEC_script() -- TextBox_2.LocalScript
 					local isVerified = scriptData.verified or false
 					local hasKey = scriptData.key or false
 					local gameName = scriptData.game and scriptData.game.name or "Unknown Game"
-					local views = scriptData.views or 0
-	
-					-- Monstrum's Gui to Lua\n-- Version: 3.2
-	
-					-- Instances:
 	
 					local Results = Instance.new("Frame")
 					local UIStroke = Instance.new("UIStroke")
@@ -957,57 +938,43 @@ local function DQEC_script() -- TextBox_2.LocalScript
 					local Verified = Instance.new("TextLabel")
 					local Key = Instance.new("TextLabel")
 	
-					--Properties:
-	
 					Results.Name = "Results"
 					Results.Parent = script.Parent.Parent.ScrollingFrame
 					Results.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
-					Results.BorderColor3 = Color3.fromRGB(0, 0, 0)
-					Results.BorderSizePixel = 0
-					Results.Position = UDim2.new(0.0344734304, 0, 0.0200803839, 0)
 					Results.Size = UDim2.new(0, 337, 0, 51)
 	
 					UIStroke.Parent = Results
 					UIStroke.Color = Color3.fromRGB(86, 86, 86)
-					UIStroke.Thickness = 2.000
+					UIStroke.Thickness = 2
 	
 					UICorner.Parent = Results
 	
 					Game.Name = "Game"
 					Game.Parent = Results
-					Game.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-					Game.BackgroundTransparency = 1.000
-					Game.BorderColor3 = Color3.fromRGB(0, 0, 0)
-					Game.BorderSizePixel = 0
-					Game.Position = UDim2.new(0.326409489, 0, 0.0196078438, 0)
+					Game.BackgroundTransparency = 1
+					Game.Position = UDim2.new(0.326, 0, 0.02, 0)
 					Game.Size = UDim2.new(0, 117, 0, 21)
 					Game.Font = Enum.Font.Ubuntu
 					Game.TextColor3 = Color3.fromRGB(255, 255, 255)
-					Game.TextSize = 14.000
-					Game.TextWrapped = true
+					Game.TextSize = 14
 					Game.Text = "Game: " .. gameName
 	
 					ExecuteFrame.Name = "ExecuteFrame"
 					ExecuteFrame.Parent = Results
 					ExecuteFrame.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
-					ExecuteFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-					ExecuteFrame.BorderSizePixel = 0
-					ExecuteFrame.Position = UDim2.new(0.873442233, 0, 0.155626789, 0)
+					ExecuteFrame.Position = UDim2.new(0.87, 0, 0.16, 0)
 					ExecuteFrame.Size = UDim2.new(0, 34, 0, 34)
 	
 					UICorner_2.Parent = ExecuteFrame
 	
 					UIStroke_2.Parent = ExecuteFrame
 					UIStroke_2.Color = Color3.fromRGB(86, 86, 86)
-					UIStroke_2.Thickness = 2.000
+					UIStroke_2.Thickness = 2
 	
 					Execute.Name = "Execute"
 					Execute.Parent = ExecuteFrame
-					Execute.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-					Execute.BackgroundTransparency = 1.000
-					Execute.BorderColor3 = Color3.fromRGB(0, 0, 0)
-					Execute.BorderSizePixel = 0
-					Execute.Position = UDim2.new(0.0788825527, 0, 0.126588255, 0)
+					Execute.BackgroundTransparency = 1
+					Execute.Position = UDim2.new(0.08, 0, 0.13, 0)
 					Execute.Size = UDim2.new(0, 28, 0, 26)
 					Execute.Image = "rbxassetid://111121478238230"
 					Execute.MouseButton1Click:Connect(function()
@@ -1021,53 +988,37 @@ local function DQEC_script() -- TextBox_2.LocalScript
 	
 					Script.Name = "Script"
 					Script.Parent = Results
-					Script.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-					Script.BackgroundTransparency = 1.000
-					Script.BorderColor3 = Color3.fromRGB(0, 0, 0)
-					Script.BorderSizePixel = 0
-					Script.Position = UDim2.new(0.326409489, 0, 0.431372553, 0)
+					Script.BackgroundTransparency = 1
+					Script.Position = UDim2.new(0.326, 0, 0.43, 0)
 					Script.Size = UDim2.new(0, 117, 0, 21)
 					Script.Font = Enum.Font.Ubuntu
 					Script.Text = scriptName
 					Script.TextColor3 = Color3.fromRGB(255, 255, 255)
-					Script.TextSize = 12.000
-					Script.TextWrapped = true
+					Script.TextSize = 12
 	
 					Verified.Name = "Verified"
 					Verified.Parent = Results
-					Verified.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-					Verified.BackgroundTransparency = 1.000
-					Verified.BorderColor3 = Color3.fromRGB(0, 0, 0)
-					Verified.BorderSizePixel = 0
-					Verified.Position = UDim2.new(0.0207715128, 0, 0.117647059, 0)
+					Verified.BackgroundTransparency = 1
+					Verified.Position = UDim2.new(0.02, 0, 0.12, 0)
 					Verified.Size = UDim2.new(0, 52, 0, 21)
 					Verified.Font = Enum.Font.Ubuntu
 					Verified.Text = isVerified and "✅" or "❌"
 					Verified.TextColor3 = Color3.fromRGB(255, 255, 255)
-					Verified.TextSize = 12.000
-					Verified.TextWrapped = true
+					Verified.TextSize = 12
 	
 					Key.Name = "Key"
 					Key.Parent = Results
-					Key.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-					Key.BackgroundTransparency = 1.000
-					Key.BorderColor3 = Color3.fromRGB(0, 0, 0)
-					Key.BorderSizePixel = 0
-					Key.Position = UDim2.new(0.0207715128, 0, 0.431372553, 0)
+					Key.BackgroundTransparency = 1
+					Key.Position = UDim2.new(0.02, 0, 0.43, 0)
 					Key.Size = UDim2.new(0, 52, 0, 21)
 					Key.Font = Enum.Font.Ubuntu
 					Key.TextColor3 = Color3.fromRGB(255, 255, 255)
-					Key.TextSize = 12.000
-					Key.TextWrapped = true
+					Key.TextSize = 12
 					Key.Text = "Key: " .. (hasKey and "🔑" or "❌")
-					-- Scripts:
 	
-					local function STASN_script() -- Execute.LocalScript 
+					local function STASN_script()
 						local script = Instance.new('LocalScript', Execute)
-	
-						local button = script.Parent
-	
-						button.MouseButton1Click:Connect(function()
+						script.Parent.MouseButton1Click:Connect(function()
 							loadstring(scriptContent)()
 						end)
 					end
@@ -1087,9 +1038,10 @@ local function DQEC_script() -- TextBox_2.LocalScript
 			clearResults()
 		end
 	end)
+	
 end
-coroutine.wrap(DQEC_script)()
-local function RHXQFZ_script() -- BackgroundFrame.LocalScript 
+coroutine.wrap(XZHEWN_script)()
+local function VMBIBX_script() -- BackgroundFrame.LocalScript 
 	local script = Instance.new('LocalScript', BackgroundFrame)
 
 	local UIS = game:GetService('UserInputService')
@@ -1127,8 +1079,8 @@ local function RHXQFZ_script() -- BackgroundFrame.LocalScript
 		end
 	end)
 end
-coroutine.wrap(RHXQFZ_script)()
-local function UYDGJK_script() -- MainButton.LocalScript 
+coroutine.wrap(VMBIBX_script)()
+local function QCDIQFU_script() -- MainButton.LocalScript 
 	local script = Instance.new('LocalScript', MainButton)
 
 	local button = script.Parent
@@ -1142,8 +1094,8 @@ local function UYDGJK_script() -- MainButton.LocalScript
 		cloud.Visible =  false
 	end)
 end
-coroutine.wrap(UYDGJK_script)()
-local function GDHVZRN_script() -- CloudButton.LocalScript 
+coroutine.wrap(QCDIQFU_script)()
+local function EVSCDQR_script() -- CloudButton.LocalScript 
 	local script = Instance.new('LocalScript', CloudButton)
 
 	local button = script.Parent
@@ -1157,8 +1109,8 @@ local function GDHVZRN_script() -- CloudButton.LocalScript
 		cloud.Visible =  true
 	end)
 end
-coroutine.wrap(GDHVZRN_script)()
-local function NHMD_script() -- EditorButton.LocalScript 
+coroutine.wrap(EVSCDQR_script)()
+local function XDSL_script() -- EditorButton.LocalScript 
 	local script = Instance.new('LocalScript', EditorButton)
 
 	local button = script.Parent
@@ -1172,8 +1124,8 @@ local function NHMD_script() -- EditorButton.LocalScript
 		cloud.Visible =  false
 	end)
 end
-coroutine.wrap(NHMD_script)()
-local function PAFE_script() -- Exit.LocalScript 
+coroutine.wrap(XDSL_script)()
+local function FWYC_script() -- Exit.LocalScript 
 	local script = Instance.new('LocalScript', Exit)
 
 	script.Parent.MouseButton1Click:Connect(function() 
@@ -1181,8 +1133,8 @@ local function PAFE_script() -- Exit.LocalScript
 		script.Parent.Parent.Parent.Parent.Parent.ImageButton.Visible = true
 	end)
 end
-coroutine.wrap(PAFE_script)()
-local function XMND_script() -- ImageButton.LocalScript 
+coroutine.wrap(FWYC_script)()
+local function JWACC_script() -- ImageButton.LocalScript 
 	local script = Instance.new('LocalScript', ImageButton)
 
 	script.Parent.MouseButton1Click:Connect(function() 
@@ -1190,10 +1142,10 @@ local function XMND_script() -- ImageButton.LocalScript
 		script.Parent.Visible = false
 	end)
 end
-coroutine.wrap(XMND_script)()
-local function ZKVG_script() -- Hybrid.LocalScript 
+coroutine.wrap(JWACC_script)()
+local function CEDET_script() -- Hybrid.LocalScript 
 	local script = Instance.new('LocalScript', Hybrid)
 
 	script.Parent.ImageButton.Visible = false
 end
-coroutine.wrap(ZKVG_script)()
+coroutine.wrap(CEDET_script)()
