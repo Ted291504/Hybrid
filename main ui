@@ -4,6 +4,10 @@ if _G.hybridloaded then
     warn("The GUI is already running!")
     return
 end
+-- Monstrum's Gui to Lua\n-- Version: 3.2
+
+-- Instances:
+
 local Hybrid = Instance.new("ScreenGui")
 local BackgroundFrame = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
@@ -77,38 +81,34 @@ local ScrollingFrame = Instance.new("ScrollingFrame")
 local UIStroke_17 = Instance.new("UIStroke")
 local UICorner_19 = Instance.new("UICorner")
 local UIListLayout = Instance.new("UIListLayout")
-local AAAAAAA = Instance.new("Frame")
-local UICorner_20 = Instance.new("UICorner")
-local UIStroke_18 = Instance.new("UIStroke")
-local TextLabel = Instance.new("TextLabel")
 local Lines = Instance.new("Folder")
 local Line_3 = Instance.new("Frame")
-local UICorner_21 = Instance.new("UICorner")
+local UICorner_20 = Instance.new("UICorner")
 local Line_4 = Instance.new("Frame")
-local UICorner_22 = Instance.new("UICorner")
+local UICorner_21 = Instance.new("UICorner")
 local Tabs = Instance.new("Folder")
 local MainIconFrame = Instance.new("Frame")
-local UICorner_23 = Instance.new("UICorner")
-local UIStroke_19 = Instance.new("UIStroke")
+local UICorner_22 = Instance.new("UICorner")
+local UIStroke_18 = Instance.new("UIStroke")
 local ImageLabel = Instance.new("ImageLabel")
 local MainButton = Instance.new("TextButton")
 local CloudIconFrame = Instance.new("Frame")
-local UICorner_24 = Instance.new("UICorner")
-local UIStroke_20 = Instance.new("UIStroke")
+local UICorner_23 = Instance.new("UICorner")
+local UIStroke_19 = Instance.new("UIStroke")
 local CloudImage = Instance.new("ImageLabel")
 local CloudButton = Instance.new("TextButton")
 local EditorIconFrame = Instance.new("Frame")
-local UICorner_25 = Instance.new("UICorner")
-local UIStroke_21 = Instance.new("UIStroke")
+local UICorner_24 = Instance.new("UICorner")
+local UIStroke_20 = Instance.new("UIStroke")
 local EditorImage = Instance.new("ImageLabel")
 local EditorButton = Instance.new("TextButton")
 local ExitIconFrame = Instance.new("Frame")
-local UICorner_26 = Instance.new("UICorner")
-local UIStroke_22 = Instance.new("UIStroke")
+local UICorner_25 = Instance.new("UICorner")
+local UIStroke_21 = Instance.new("UIStroke")
 local Exit = Instance.new("ImageButton")
 local TitleFrame = Instance.new("Frame")
-local UICorner_27 = Instance.new("UICorner")
-local UIStroke_23 = Instance.new("UIStroke")
+local UICorner_26 = Instance.new("UICorner")
+local UIStroke_22 = Instance.new("UIStroke")
 local HybridLogo = Instance.new("ImageLabel")
 local ImageButton = Instance.new("ImageButton")
 
@@ -585,32 +585,6 @@ UIListLayout.Parent = ScrollingFrame
 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 UIListLayout.Padding = UDim.new(0, 5)
 
-AAAAAAA.Name = "AAAAAAA"
-AAAAAAA.Parent = CloudFrame
-AAAAAAA.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
-AAAAAAA.BorderColor3 = Color3.fromRGB(0, 0, 0)
-AAAAAAA.BorderSizePixel = 0
-AAAAAAA.Position = UDim2.new(1.55751514, 0, -0.414335608, 0)
-AAAAAAA.Size = UDim2.new(0, 383, 0, 235)
-
-UICorner_20.Parent = AAAAAAA
-
-UIStroke_18.Parent = AAAAAAA
-UIStroke_18.Color = Color3.fromRGB(86, 86, 86)
-UIStroke_18.Thickness = 2.000
-
-TextLabel.Parent = AAAAAAA
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.BorderSizePixel = 0
-TextLabel.Position = UDim2.new(0.187989563, 0, 0.306382984, 0)
-TextLabel.Size = UDim2.new(0, 200, 0, 50)
-TextLabel.Font = Enum.Font.Ubuntu
-TextLabel.Text = "Tab Under Development"
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextSize = 30.000
-
 Lines.Name = "Lines"
 Lines.Parent = BackgroundFrame
 
@@ -622,7 +596,7 @@ Line_3.BorderSizePixel = 0
 Line_3.Position = UDim2.new(0.259597808, 0, 0.95538044, 0)
 Line_3.Size = UDim2.new(0, 2, 0, -234)
 
-UICorner_21.Parent = Line_3
+UICorner_20.Parent = Line_3
 
 Line_4.Name = "Line"
 Line_4.Parent = Lines
@@ -632,7 +606,7 @@ Line_4.BorderSizePixel = 0
 Line_4.Position = UDim2.new(0.0255941506, 0, 0.231789917, 0)
 Line_4.Size = UDim2.new(0, 117, 0, 2)
 
-UICorner_22.Parent = Line_4
+UICorner_21.Parent = Line_4
 
 Tabs.Name = "Tabs"
 Tabs.Parent = BackgroundFrame
@@ -645,11 +619,11 @@ MainIconFrame.BorderSizePixel = 0
 MainIconFrame.Position = UDim2.new(0.0255941506, 0, 0.305575013, 0)
 MainIconFrame.Size = UDim2.new(0, 117, 0, 32)
 
-UICorner_23.Parent = MainIconFrame
+UICorner_22.Parent = MainIconFrame
 
-UIStroke_19.Parent = MainIconFrame
-UIStroke_19.Color = Color3.fromRGB(86, 86, 86)
-UIStroke_19.Thickness = 2.000
+UIStroke_18.Parent = MainIconFrame
+UIStroke_18.Color = Color3.fromRGB(86, 86, 86)
+UIStroke_18.Thickness = 2.000
 
 ImageLabel.Parent = MainIconFrame
 ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -680,11 +654,11 @@ CloudIconFrame.BorderSizePixel = 0
 CloudIconFrame.Position = UDim2.new(0.0255941506, 0, 0.651878476, 0)
 CloudIconFrame.Size = UDim2.new(0, 117, 0, 32)
 
-UICorner_24.Parent = CloudIconFrame
+UICorner_23.Parent = CloudIconFrame
 
-UIStroke_20.Parent = CloudIconFrame
-UIStroke_20.Color = Color3.fromRGB(86, 86, 86)
-UIStroke_20.Thickness = 2.000
+UIStroke_19.Parent = CloudIconFrame
+UIStroke_19.Color = Color3.fromRGB(86, 86, 86)
+UIStroke_19.Thickness = 2.000
 
 CloudImage.Name = "CloudImage"
 CloudImage.Parent = CloudIconFrame
@@ -716,11 +690,11 @@ EditorIconFrame.BorderSizePixel = 0
 EditorIconFrame.Position = UDim2.new(0.0255941506, 0, 0.476781219, 0)
 EditorIconFrame.Size = UDim2.new(0, 117, 0, 32)
 
-UICorner_25.Parent = EditorIconFrame
+UICorner_24.Parent = EditorIconFrame
 
-UIStroke_21.Parent = EditorIconFrame
-UIStroke_21.Color = Color3.fromRGB(86, 86, 86)
-UIStroke_21.Thickness = 2.000
+UIStroke_20.Parent = EditorIconFrame
+UIStroke_20.Color = Color3.fromRGB(86, 86, 86)
+UIStroke_20.Thickness = 2.000
 
 EditorImage.Name = "EditorImage"
 EditorImage.Parent = EditorIconFrame
@@ -752,11 +726,11 @@ ExitIconFrame.BorderSizePixel = 0
 ExitIconFrame.Position = UDim2.new(0.0255941562, 0, 0.830866814, 0)
 ExitIconFrame.Size = UDim2.new(0, 31, 0, 32)
 
-UICorner_26.Parent = ExitIconFrame
+UICorner_25.Parent = ExitIconFrame
 
-UIStroke_22.Parent = ExitIconFrame
-UIStroke_22.Color = Color3.fromRGB(86, 86, 86)
-UIStroke_22.Thickness = 2.000
+UIStroke_21.Parent = ExitIconFrame
+UIStroke_21.Color = Color3.fromRGB(86, 86, 86)
+UIStroke_21.Thickness = 2.000
 
 Exit.Name = "Exit"
 Exit.Parent = ExitIconFrame
@@ -777,11 +751,11 @@ TitleFrame.BorderSizePixel = 0
 TitleFrame.Position = UDim2.new(0.0968921408, 0, 0.0409835652, 0)
 TitleFrame.Size = UDim2.new(0, 39, 0, 35)
 
-UICorner_27.Parent = TitleFrame
+UICorner_26.Parent = TitleFrame
 
-UIStroke_23.Parent = TitleFrame
-UIStroke_23.Color = Color3.fromRGB(86, 86, 86)
-UIStroke_23.Thickness = 2.000
+UIStroke_22.Parent = TitleFrame
+UIStroke_22.Color = Color3.fromRGB(86, 86, 86)
+UIStroke_22.Thickness = 2.000
 
 HybridLogo.Name = "HybridLogo"
 HybridLogo.Parent = TitleFrame
@@ -804,7 +778,7 @@ ImageButton.Image = "rbxassetid://72310455670962"
 
 -- Scripts:
 
-local function AJFWWDU_script() -- Execute.LocalScript 
+local function ZVQA_script() -- Execute.LocalScript 
 	local script = Instance.new('LocalScript', Execute)
 
 	local button = script.Parent
@@ -814,8 +788,8 @@ local function AJFWWDU_script() -- Execute.LocalScript
 		loadstring(textbox.Text)()
 	end)
 end
-coroutine.wrap(AJFWWDU_script)()
-local function NEGFW_script() -- Clear.LocalScript 
+coroutine.wrap(ZVQA_script)()
+local function QOQNKV_script() -- Clear.LocalScript 
 	local script = Instance.new('LocalScript', Clear)
 
 	local button = script.Parent
@@ -825,8 +799,8 @@ local function NEGFW_script() -- Clear.LocalScript
 		textbox.Text = ""
 	end)
 end
-coroutine.wrap(NEGFW_script)()
-local function VBPLHG_script() -- Copy.LocalScript 
+coroutine.wrap(QOQNKV_script)()
+local function WKZWARI_script() -- Copy.LocalScript 
 	local script = Instance.new('LocalScript', Copy)
 
 	local button = script.Parent
@@ -836,8 +810,8 @@ local function VBPLHG_script() -- Copy.LocalScript
 		setclipboard(textbox.Text)
 	end)
 end
-coroutine.wrap(VBPLHG_script)()
-local function RVZNDUL_script() -- Paste.LocalScript 
+coroutine.wrap(WKZWARI_script)()
+local function KAVXP_script() -- Paste.LocalScript 
 	local script = Instance.new('LocalScript', Paste)
 
 	local button = script.Parent
@@ -847,8 +821,8 @@ local function RVZNDUL_script() -- Paste.LocalScript
 		textbox.Text = getclipboard()
 	end)
 end
-coroutine.wrap(RVZNDUL_script)()
-local function YYLSZ_script() -- FPSTitle.LocalScript 
+coroutine.wrap(KAVXP_script)()
+local function QRVKGH_script() -- FPSTitle.LocalScript 
 	local script = Instance.new('LocalScript', FPSTitle)
 
 	local textLabel = script.Parent
@@ -866,8 +840,8 @@ local function YYLSZ_script() -- FPSTitle.LocalScript
 	end)
 	
 end
-coroutine.wrap(YYLSZ_script)()
-local function TDWGV_script() -- InfYieldBTN.LocalScript 
+coroutine.wrap(QRVKGH_script)()
+local function SHBMID_script() -- InfYieldBTN.LocalScript 
 	local script = Instance.new('LocalScript', InfYieldBTN)
 
 	local button = script.Parent
@@ -876,8 +850,8 @@ local function TDWGV_script() -- InfYieldBTN.LocalScript
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/edgeiy/infiniteyield/master/source"))()
 	end)
 end
-coroutine.wrap(TDWGV_script)()
-local function SHAGU_script() -- UNCScriptBTN.LocalScript 
+coroutine.wrap(SHBMID_script)()
+local function DUJL_script() -- UNCScriptBTN.LocalScript 
 	local script = Instance.new('LocalScript', UNCScriptBTN)
 
 	local button = script.Parent
@@ -886,8 +860,8 @@ local function SHAGU_script() -- UNCScriptBTN.LocalScript
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/unified-naming-convention/NamingStandard/refs/heads/main/UNCCheckEnv.lua"))()
 	end)
 end
-coroutine.wrap(SHAGU_script)()
-local function JJQGINZ_script() -- DexBTN.LocalScript 
+coroutine.wrap(DUJL_script)()
+local function HDRADG_script() -- DexBTN.LocalScript 
 	local script = Instance.new('LocalScript', DexBTN)
 
 	local button = script.Parent
@@ -895,8 +869,8 @@ local function JJQGINZ_script() -- DexBTN.LocalScript
 		loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Dex%20Explorer.txt"))()
 	end)
 end
-coroutine.wrap(JJQGINZ_script)()
-local function EPYWH_script() -- PINGTitle.LocalScript 
+coroutine.wrap(HDRADG_script)()
+local function YSPVP_script() -- PINGTitle.LocalScript 
 	local script = Instance.new('LocalScript', PINGTitle)
 
 	local textLabel = script.Parent
@@ -908,8 +882,8 @@ local function EPYWH_script() -- PINGTitle.LocalScript
 		textLabel.Text = "Current PING : " .. math.floor(ping) .. " ms"
 	end)
 end
-coroutine.wrap(EPYWH_script)()
-local function RNGA_script() -- TextBox_2.LocalScript 
+coroutine.wrap(YSPVP_script)()
+local function HXZT_script() -- TextBox_2.LocalScript 
 	local script = Instance.new('LocalScript', TextBox_2)
 
 	local textBox = script.Parent
@@ -1114,8 +1088,8 @@ local function RNGA_script() -- TextBox_2.LocalScript
 		end
 	end)
 end
-coroutine.wrap(RNGA_script)()
-local function KUWQK_script() -- BackgroundFrame.LocalScript 
+coroutine.wrap(HXZT_script)()
+local function ILSMSA_script() -- BackgroundFrame.LocalScript 
 	local script = Instance.new('LocalScript', BackgroundFrame)
 
 	local UIS = game:GetService('UserInputService')
@@ -1153,8 +1127,8 @@ local function KUWQK_script() -- BackgroundFrame.LocalScript
 		end
 	end)
 end
-coroutine.wrap(KUWQK_script)()
-local function CLCRE_script() -- MainButton.LocalScript 
+coroutine.wrap(ILSMSA_script)()
+local function OTZWB_script() -- MainButton.LocalScript 
 	local script = Instance.new('LocalScript', MainButton)
 
 	local button = script.Parent
@@ -1168,8 +1142,8 @@ local function CLCRE_script() -- MainButton.LocalScript
 		cloud.Visible =  false
 	end)
 end
-coroutine.wrap(CLCRE_script)()
-local function AKGQTU_script() -- CloudButton.LocalScript 
+coroutine.wrap(OTZWB_script)()
+local function AVZVZHJ_script() -- CloudButton.LocalScript 
 	local script = Instance.new('LocalScript', CloudButton)
 
 	local button = script.Parent
@@ -1183,8 +1157,8 @@ local function AKGQTU_script() -- CloudButton.LocalScript
 		cloud.Visible =  true
 	end)
 end
-coroutine.wrap(AKGQTU_script)()
-local function EYMVH_script() -- EditorButton.LocalScript 
+coroutine.wrap(AVZVZHJ_script)()
+local function AMYDQGJ_script() -- EditorButton.LocalScript 
 	local script = Instance.new('LocalScript', EditorButton)
 
 	local button = script.Parent
@@ -1198,8 +1172,8 @@ local function EYMVH_script() -- EditorButton.LocalScript
 		cloud.Visible =  false
 	end)
 end
-coroutine.wrap(EYMVH_script)()
-local function UIPMJYV_script() -- Exit.LocalScript 
+coroutine.wrap(AMYDQGJ_script)()
+local function JTOWFUM_script() -- Exit.LocalScript 
 	local script = Instance.new('LocalScript', Exit)
 
 	script.Parent.MouseButton1Click:Connect(function() 
@@ -1207,8 +1181,8 @@ local function UIPMJYV_script() -- Exit.LocalScript
 		script.Parent.Parent.Parent.Parent.Parent.ImageButton.Visible = true
 	end)
 end
-coroutine.wrap(UIPMJYV_script)()
-local function XQEH_script() -- ImageButton.LocalScript 
+coroutine.wrap(JTOWFUM_script)()
+local function JAJFZ_script() -- ImageButton.LocalScript 
 	local script = Instance.new('LocalScript', ImageButton)
 
 	script.Parent.MouseButton1Click:Connect(function() 
@@ -1216,10 +1190,10 @@ local function XQEH_script() -- ImageButton.LocalScript
 		script.Parent.Visible = false
 	end)
 end
-coroutine.wrap(XQEH_script)()
-local function YCPPN_script() -- Hybrid.LocalScript 
+coroutine.wrap(JAJFZ_script)()
+local function LFYPV_script() -- Hybrid.LocalScript 
 	local script = Instance.new('LocalScript', Hybrid)
 
 	script.Parent.ImageButton.Visible = false
 end
-coroutine.wrap(YCPPN_script)()
+coroutine.wrap(LFYPV_script)()
