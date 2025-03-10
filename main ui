@@ -272,7 +272,6 @@ HomeFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 HomeFrame.BorderSizePixel = 0
 HomeFrame.Position = UDim2.new(0.283363789, 0, 0.0409835652, 0)
 HomeFrame.Size = UDim2.new(0, 383, 0, 235)
-HomeFrame.Visible = false
 
 UICorner_7.Parent = HomeFrame
 
@@ -539,6 +538,7 @@ CloudFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 CloudFrame.BorderSizePixel = 0
 CloudFrame.Position = UDim2.new(0.283363789, 0, 0.0409835652, 0)
 CloudFrame.Size = UDim2.new(0, 383, 0, 235)
+CloudFrame.Visible = false
 
 UICorner_17.Parent = CloudFrame
 
@@ -778,7 +778,7 @@ ImageButton.Image = "rbxassetid://72310455670962"
 
 -- Scripts:
 
-local function ZVQA_script() -- Execute.LocalScript 
+local function CZLORS_script() -- Execute.LocalScript 
 	local script = Instance.new('LocalScript', Execute)
 
 	local button = script.Parent
@@ -788,8 +788,8 @@ local function ZVQA_script() -- Execute.LocalScript
 		loadstring(textbox.Text)()
 	end)
 end
-coroutine.wrap(ZVQA_script)()
-local function QOQNKV_script() -- Clear.LocalScript 
+coroutine.wrap(CZLORS_script)()
+local function MYCYRGC_script() -- Clear.LocalScript 
 	local script = Instance.new('LocalScript', Clear)
 
 	local button = script.Parent
@@ -799,8 +799,8 @@ local function QOQNKV_script() -- Clear.LocalScript
 		textbox.Text = ""
 	end)
 end
-coroutine.wrap(QOQNKV_script)()
-local function WKZWARI_script() -- Copy.LocalScript 
+coroutine.wrap(MYCYRGC_script)()
+local function AVLER_script() -- Copy.LocalScript 
 	local script = Instance.new('LocalScript', Copy)
 
 	local button = script.Parent
@@ -810,8 +810,8 @@ local function WKZWARI_script() -- Copy.LocalScript
 		setclipboard(textbox.Text)
 	end)
 end
-coroutine.wrap(WKZWARI_script)()
-local function KAVXP_script() -- Paste.LocalScript 
+coroutine.wrap(AVLER_script)()
+local function BPPTD_script() -- Paste.LocalScript 
 	local script = Instance.new('LocalScript', Paste)
 
 	local button = script.Parent
@@ -821,8 +821,8 @@ local function KAVXP_script() -- Paste.LocalScript
 		textbox.Text = getclipboard()
 	end)
 end
-coroutine.wrap(KAVXP_script)()
-local function QRVKGH_script() -- FPSTitle.LocalScript 
+coroutine.wrap(BPPTD_script)()
+local function OVPEKHC_script() -- FPSTitle.LocalScript 
 	local script = Instance.new('LocalScript', FPSTitle)
 
 	local textLabel = script.Parent
@@ -840,8 +840,8 @@ local function QRVKGH_script() -- FPSTitle.LocalScript
 	end)
 	
 end
-coroutine.wrap(QRVKGH_script)()
-local function SHBMID_script() -- InfYieldBTN.LocalScript 
+coroutine.wrap(OVPEKHC_script)()
+local function SLJPZW_script() -- InfYieldBTN.LocalScript 
 	local script = Instance.new('LocalScript', InfYieldBTN)
 
 	local button = script.Parent
@@ -850,8 +850,8 @@ local function SHBMID_script() -- InfYieldBTN.LocalScript
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/edgeiy/infiniteyield/master/source"))()
 	end)
 end
-coroutine.wrap(SHBMID_script)()
-local function DUJL_script() -- UNCScriptBTN.LocalScript 
+coroutine.wrap(SLJPZW_script)()
+local function VULOVU_script() -- UNCScriptBTN.LocalScript 
 	local script = Instance.new('LocalScript', UNCScriptBTN)
 
 	local button = script.Parent
@@ -860,8 +860,8 @@ local function DUJL_script() -- UNCScriptBTN.LocalScript
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/unified-naming-convention/NamingStandard/refs/heads/main/UNCCheckEnv.lua"))()
 	end)
 end
-coroutine.wrap(DUJL_script)()
-local function HDRADG_script() -- DexBTN.LocalScript 
+coroutine.wrap(VULOVU_script)()
+local function STMSH_script() -- DexBTN.LocalScript 
 	local script = Instance.new('LocalScript', DexBTN)
 
 	local button = script.Parent
@@ -869,8 +869,8 @@ local function HDRADG_script() -- DexBTN.LocalScript
 		loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Dex%20Explorer.txt"))()
 	end)
 end
-coroutine.wrap(HDRADG_script)()
-local function YSPVP_script() -- PINGTitle.LocalScript 
+coroutine.wrap(STMSH_script)()
+local function IEPXM_script() -- PINGTitle.LocalScript 
 	local script = Instance.new('LocalScript', PINGTitle)
 
 	local textLabel = script.Parent
@@ -882,8 +882,8 @@ local function YSPVP_script() -- PINGTitle.LocalScript
 		textLabel.Text = "Current PING : " .. math.floor(ping) .. " ms"
 	end)
 end
-coroutine.wrap(YSPVP_script)()
-local function HXZT_script() -- TextBox_2.LocalScript 
+coroutine.wrap(IEPXM_script)()
+local function OVFLN_script() -- TextBox_2.LocalScript 
 	local script = Instance.new('LocalScript', TextBox_2)
 
 	local textBox = script.Parent
@@ -1088,8 +1088,8 @@ local function HXZT_script() -- TextBox_2.LocalScript
 		end
 	end)
 end
-coroutine.wrap(HXZT_script)()
-local function ILSMSA_script() -- BackgroundFrame.LocalScript 
+coroutine.wrap(OVFLN_script)()
+local function ZDNLHH_script() -- BackgroundFrame.LocalScript 
 	local script = Instance.new('LocalScript', BackgroundFrame)
 
 	local UIS = game:GetService('UserInputService')
@@ -1127,8 +1127,8 @@ local function ILSMSA_script() -- BackgroundFrame.LocalScript
 		end
 	end)
 end
-coroutine.wrap(ILSMSA_script)()
-local function OTZWB_script() -- MainButton.LocalScript 
+coroutine.wrap(ZDNLHH_script)()
+local function PTTKA_script() -- MainButton.LocalScript 
 	local script = Instance.new('LocalScript', MainButton)
 
 	local button = script.Parent
@@ -1142,8 +1142,8 @@ local function OTZWB_script() -- MainButton.LocalScript
 		cloud.Visible =  false
 	end)
 end
-coroutine.wrap(OTZWB_script)()
-local function AVZVZHJ_script() -- CloudButton.LocalScript 
+coroutine.wrap(PTTKA_script)()
+local function IBPUZHQ_script() -- CloudButton.LocalScript 
 	local script = Instance.new('LocalScript', CloudButton)
 
 	local button = script.Parent
@@ -1157,8 +1157,8 @@ local function AVZVZHJ_script() -- CloudButton.LocalScript
 		cloud.Visible =  true
 	end)
 end
-coroutine.wrap(AVZVZHJ_script)()
-local function AMYDQGJ_script() -- EditorButton.LocalScript 
+coroutine.wrap(IBPUZHQ_script)()
+local function QGVE_script() -- EditorButton.LocalScript 
 	local script = Instance.new('LocalScript', EditorButton)
 
 	local button = script.Parent
@@ -1172,8 +1172,8 @@ local function AMYDQGJ_script() -- EditorButton.LocalScript
 		cloud.Visible =  false
 	end)
 end
-coroutine.wrap(AMYDQGJ_script)()
-local function JTOWFUM_script() -- Exit.LocalScript 
+coroutine.wrap(QGVE_script)()
+local function MPHNMH_script() -- Exit.LocalScript 
 	local script = Instance.new('LocalScript', Exit)
 
 	script.Parent.MouseButton1Click:Connect(function() 
@@ -1181,8 +1181,8 @@ local function JTOWFUM_script() -- Exit.LocalScript
 		script.Parent.Parent.Parent.Parent.Parent.ImageButton.Visible = true
 	end)
 end
-coroutine.wrap(JTOWFUM_script)()
-local function JAJFZ_script() -- ImageButton.LocalScript 
+coroutine.wrap(MPHNMH_script)()
+local function UKWBSES_script() -- ImageButton.LocalScript 
 	local script = Instance.new('LocalScript', ImageButton)
 
 	script.Parent.MouseButton1Click:Connect(function() 
@@ -1190,10 +1190,10 @@ local function JAJFZ_script() -- ImageButton.LocalScript
 		script.Parent.Visible = false
 	end)
 end
-coroutine.wrap(JAJFZ_script)()
-local function LFYPV_script() -- Hybrid.LocalScript 
+coroutine.wrap(UKWBSES_script)()
+local function YNHDK_script() -- Hybrid.LocalScript 
 	local script = Instance.new('LocalScript', Hybrid)
 
 	script.Parent.ImageButton.Visible = false
 end
-coroutine.wrap(LFYPV_script)()
+coroutine.wrap(YNHDK_script)()
