@@ -1,6 +1,7 @@
-local killswitch = loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/killSwitch",true))()
+local killswitch = loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/killSwitch", true))()
 
-print(killSwitch)
+print(killswitch)
+
 
 print("Main ui starting...")
 
