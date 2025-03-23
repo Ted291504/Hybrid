@@ -10,9 +10,6 @@ if _G.hybridloaded then
     warn("The GUI is already running!")
     return
 end
-local killswitch = game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/killSwitch"))
-
-print(killswitch)
 -- Monstrum's Gui to Lua\n-- Version: 3.2
 
 -- Instances:
