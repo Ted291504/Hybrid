@@ -1,3 +1,10 @@
+local killswitch_link = "https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/killSwitch"
+
+local killswitch = loadstring(Game:HttpGet(killswitch_link))
+
+
+
+
 print("Main ui starting...")
 
 if _G.hybridloaded then
@@ -10,6 +17,7 @@ if _G.hybridloaded then
     warn("The GUI is already running!")
     return
 end
+
 -- Monstrum's Gui to Lua\n-- Version: 3.2
 
 -- Instances:
