@@ -2,8 +2,7 @@ local killswitch_link = "https://raw.githubusercontent.com/Ted291504/Hybrid/refs
 
 local killswitch = loadstring(Game:HttpGet(killswitch_link))
 
-
-
+print(killSwitch)
 
 print("Main ui starting...")
 
