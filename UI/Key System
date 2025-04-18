@@ -15,7 +15,7 @@ if Key_Sys_Online == true then
 
 	if isfile("HybridKey.txt") and (KeyGuardLibrary.validateDefaultKey(readfile("HybridKey.txt")) == trueData or KeyGuardLibrary.validatePremiumKey(readfile("HybridKey.txt"))) == trueData then
 		print("Already has a valid key")
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/main%20ui",true))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Main%20UI",true))()
 	else
 		local Key_System_UI = Instance.new("ScreenGui")
 		local Main_Frame = Instance.new("Frame")
@@ -257,7 +257,7 @@ if Key_Sys_Online == true then
 				print("Key is Valid")
 				writefile("HybridKey.txt", tostring(Key_Enter.Text))
 				Key_System_UI:Destroy()
-				loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/main%20ui",true))()
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Main%20UI",true))()
 			else
 				print("Key is not Valid")
 				Key_Enter.PlaceholderText = "Key is not valid!"
@@ -361,5 +361,5 @@ if Key_Sys_Online == true then
 	end
 else 
 	warn("Key System manually disabled because KeyGuardian is down or another reason just ask diet coke.")
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/main%20ui",true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Main%20UI",true))()
 end
