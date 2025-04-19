@@ -3,12 +3,12 @@ local Key_Sys_Online = false
 
 if Key_Sys_Online == true then
 	local KeyGuardLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/nathzzi/Rift-Android/refs/heads/main/keyguardian/keyguardianlibrary.lua"))()
-	local trueData = "6fcea905dc224035a098cc29bd559cea"
-	local falseData = "fc86e7ae09cc41578337a76d8585b0f5"
+	local trueData = "729b2d0813534812951c1ead7ee7e10a"
+	local falseData = "a9051db43f4e452fa47e4c81a0727cb6"
 
 	local KeySys = KeyGuardLibrary.Set({
-		publicToken = "1ceea3083f0a4c46aa50013ba25226d7",
-		privateToken = "4d87c0e28ff846fbbff9ff1a70c299eb",
+		publicToken = "e423a2fdba5842a68919e6f8fb714064",
+		privateToken = "930ecef53c674a3bb5bca1576577716f",
 		trueData = trueData,
 		falseData = falseData,
 	})
