@@ -1,3 +1,12 @@
 {
-  "API Version": "1.0.0",
+  "Versions": {
+    "API Version": "1.0.0",
+    "Hybrid Version": "rel"
+    "UI Version": "2.2.0"
+  },
+  "Links": {
+    "Hybrid Website": "real",
+    "Hybrid UI": "real!!!",
+    "Hybrid Discord": "rel!"
+  }
 }
