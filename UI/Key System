@@ -1,5 +1,5 @@
 print("Key system starting...")
-local Key_Sys_Online = false
+local Key_Sys_Online = true
 
 if Key_Sys_Online == true then
 	local KeyGuardLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/nathzzi/Rift-Android/refs/heads/main/keyguardian/keyguardianlibrary.lua"))()
