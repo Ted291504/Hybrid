@@ -1,11 +1,9 @@
 {
   "Versions": {
     "Hybrid_App_Version": "2.669.664",
-    "API_Version": "1.2.2",
+    "API_Version": "1.2.1",
     "Hybrid_Version": "2.6.0",
     "UI_Version": "2.2.0",
-    "Roblox_Version": "",
-    "Roblox_VNG_Version": ""
   },
   "Links": {
     "Hybrid_Website": "https://hybrid-website.vercel.app/",
