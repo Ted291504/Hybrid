@@ -1,26 +1,40 @@
 {
   "Versions": {
-    "Hybrid_App_Version": "2.669.664",
-    "API_Version": "1.2.1",
-    "Hybrid_Version": "2.6.0",
-    "UI_Version": "2.2.0",
-    "Roblox_Version": "",
-    "Roblox_VNG_Version": ""
+    "Hybrid": {
+      "Hybrid_App_Version": "2.669.664",
+      "API_Version": "1.3.0",
+      "Hybrid_Version": "2.6.0",
+      "UI_Version": "2.2.0"
+    },
+    
+    "Roblox": {
+      "Roblox_Version": "",
+      "Roblox_VNG_Version": ""
+    },
+    
   },
   "Links": {
-    "Hybrid_Website": "https://hybrid-website.vercel.app/",
-    "Hybrid_Main_UI": "https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Main%20UI",
-    "Hybrid_Key_System_UI": "https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Key%20System",
-    "Hybrid_Discord": "https://discord.gg/cPdgymVVzQ"
-  },
-  "ApkLinks": {
-    "Global": {
-      "64": "https://www.mediafire.com/file/lmg7ch4ytoy200v/Hybrid+2.6.0.apk/file",
-      "32": ""
+    "UI_Links": {
+      "Hybrid_Main_UI": "https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Main%20UI",
+      "Hybrid_Key_System_UI": "https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Key%20System"
     },
-    "VNG": {
-      "64": "https://easyupload.io/y4vgnf",
-      "32": ""
-    }
+    
+    "Website_links": {
+      "Hybrid_Website": "https://hybrid-website.vercel.app/",
+      "Hybrid_Discord": "https://discord.gg/cPdgymVVzQ"
+    },
+  },
+  "Downloads": {
+    "ApkLinks": {
+      "Global": {
+        "64": "https://www.mediafire.com/file/lmg7ch4ytoy200v/Hybrid+2.6.0.apk/file",
+        "32": ""
+      },
+      
+      "VNG": {
+        "64": "https://easyupload.io/y4vgnf",
+        "32": ""
+      },
+    },
   }
 }
