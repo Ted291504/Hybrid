@@ -1,0 +1,306 @@
+local Key_System_UI = Instance.new("ScreenGui")
+	local Main_Frame = Instance.new("Frame")
+	local UICorner = Instance.new("UICorner")
+	local UIStroke = Instance.new("UIStroke")
+	local TabsFrame = Instance.new("Folder")
+	local Sigma = Instance.new("Frame")
+	local UICorner_2 = Instance.new("UICorner")
+	local UIStroke_2 = Instance.new("UIStroke")
+	local Key_Enter = Instance.new("TextBox")
+	local UICorner_3 = Instance.new("UICorner")
+	local UIStroke_3 = Instance.new("UIStroke")
+	local TitleFrame = Instance.new("Frame")
+	local UICorner_4 = Instance.new("UICorner")
+	local UIStroke_4 = Instance.new("UIStroke")
+	local HybridLogo = Instance.new("ImageLabel")
+	local Buttons = Instance.new("Folder")
+	local Discord_Button = Instance.new("Frame")
+	local UICorner_5 = Instance.new("UICorner")
+	local UIStroke_5 = Instance.new("UIStroke")
+	local ImageLabel = Instance.new("ImageLabel")
+	local MainButton = Instance.new("TextButton")
+	local Get_Key_button = Instance.new("Frame")
+	local UICorner_6 = Instance.new("UICorner")
+	local UIStroke_6 = Instance.new("UIStroke")
+	local ImageLabel_2 = Instance.new("ImageLabel")
+	local MainButton_2 = Instance.new("TextButton")
+	local Check_Key_Button = Instance.new("Frame")
+	local UICorner_7 = Instance.new("UICorner")
+	local UIStroke_7 = Instance.new("UIStroke")
+	local ImageLabel_3 = Instance.new("ImageLabel")
+	local MainButton_3 = Instance.new("TextButton")
+	local MainButton_4 = Instance.new("TextButton")
+
+	--Properties:
+
+	Key_System_UI.Name = "Key_System_UI"
+	Key_System_UI.Parent = game:GetService("CoreGui")
+	Key_System_UI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	Key_System_UI.ResetOnSpawn = false
+
+	Main_Frame.Name = "Main_Frame"
+	Main_Frame.Parent = Key_System_UI
+	Main_Frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+	Main_Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Main_Frame.BorderSizePixel = 0
+	Main_Frame.Position = UDim2.new(0.11168164, 0, 0.216700137, 0)
+	Main_Frame.Size = UDim2.new(0, 547, 0, 257)
+
+	UICorner.Parent = Main_Frame
+
+	UIStroke.Parent = Main_Frame
+	UIStroke.Color = Color3.fromRGB(86, 86, 86)
+	UIStroke.Thickness = 2.000
+
+	TabsFrame.Name = "TabsFrame"
+	TabsFrame.Parent = Main_Frame
+
+	Sigma.Name = "Sigma"
+	Sigma.Parent = TabsFrame
+	Sigma.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+	Sigma.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Sigma.BorderSizePixel = 0
+	Sigma.Position = UDim2.new(0.0274223033, 0, 0.0409835652, 0)
+	Sigma.Size = UDim2.new(0, 522, 0, 235)
+
+	UICorner_2.Parent = Sigma
+
+	UIStroke_2.Parent = Sigma
+	UIStroke_2.Color = Color3.fromRGB(86, 86, 86)
+	UIStroke_2.Thickness = 2.000
+
+	Key_Enter.Name = "Key_Enter"
+	Key_Enter.Parent = Sigma
+	Key_Enter.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+	Key_Enter.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Key_Enter.BorderSizePixel = 0
+	Key_Enter.Position = UDim2.new(0.0613026805, 0, 0.272340417, 0)
+	Key_Enter.Size = UDim2.new(0, 456, 0, 50)
+	Key_Enter.Font = Enum.Font.Ubuntu
+	Key_Enter.PlaceholderText = "Enter key here"
+	Key_Enter.Text = ""
+	Key_Enter.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Key_Enter.TextSize = 14.000
+
+	UICorner_3.Parent = Key_Enter
+
+	UIStroke_3.Parent = Key_Enter
+	UIStroke_3.Color = Color3.fromRGB(86, 86, 86)
+	UIStroke_3.Thickness = 2.000
+	UIStroke_3.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+
+	TitleFrame.Name = "TitleFrame"
+	TitleFrame.Parent = TabsFrame
+	TitleFrame.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+	TitleFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	TitleFrame.BorderSizePixel = 0
+	TitleFrame.Position = UDim2.new(0.0585009158, 0, 0.0760030225, 0)
+	TitleFrame.Size = UDim2.new(0, 39, 0, 35)
+
+	UICorner_4.Parent = TitleFrame
+
+	UIStroke_4.Parent = TitleFrame
+	UIStroke_4.Color = Color3.fromRGB(86, 86, 86)
+	UIStroke_4.Thickness = 2.000
+
+	HybridLogo.Name = "HybridLogo"
+	HybridLogo.Parent = TitleFrame
+	HybridLogo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	HybridLogo.BackgroundTransparency = 1.000
+	HybridLogo.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	HybridLogo.BorderSizePixel = 0
+	HybridLogo.Position = UDim2.new(-0.170939907, 0, -0.200000003, 0)
+	HybridLogo.Size = UDim2.new(0, 51, 0, 48)
+	HybridLogo.Image = "rbxassetid://72310455670962"
+
+	Buttons.Name = "Buttons"
+	Buttons.Parent = Main_Frame
+
+	Discord_Button.Name = "Discord_Button"
+	Discord_Button.Parent = Buttons
+	Discord_Button.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+	Discord_Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Discord_Button.BorderSizePixel = 0
+	Discord_Button.Position = UDim2.new(0.0595007986, 0, 0.655769527, 0)
+	Discord_Button.Size = UDim2.new(0, 116, 0, 32)
+
+	UICorner_5.Parent = Discord_Button
+
+	UIStroke_5.Parent = Discord_Button
+	UIStroke_5.Color = Color3.fromRGB(86, 86, 86)
+	UIStroke_5.Thickness = 2.000
+
+	ImageLabel.Parent = Discord_Button
+	ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ImageLabel.BackgroundTransparency = 1.000
+	ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	ImageLabel.BorderSizePixel = 0
+	ImageLabel.Position = UDim2.new(0.05982906, 0, 0.15625, 0)
+	ImageLabel.Size = UDim2.new(0, 20, 0, 21)
+	ImageLabel.Image = "http://www.roblox.com/asset/?id=6953855299"
+
+	MainButton.Name = "MainButton"
+	MainButton.Parent = Discord_Button
+	MainButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	MainButton.BackgroundTransparency = 1.000
+	MainButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	MainButton.BorderSizePixel = 0
+	MainButton.Position = UDim2.new(0.224137932, 0, -0.03125, 0)
+	MainButton.Size = UDim2.new(0, 81, 0, 32)
+	MainButton.Font = Enum.Font.Ubuntu
+	MainButton.Text = "Discord"
+	MainButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	MainButton.TextSize = 14.000
+
+	Get_Key_button.Name = "Get_Key_button"
+	Get_Key_button.Parent = Buttons
+	Get_Key_button.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+	Get_Key_button.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Get_Key_button.BorderSizePixel = 0
+	Get_Key_button.Position = UDim2.new(0.392224759, 0, 0.651878476, 0)
+	Get_Key_button.Size = UDim2.new(0, 116, 0, 32)
+
+	UICorner_6.Parent = Get_Key_button
+
+	UIStroke_6.Parent = Get_Key_button
+	UIStroke_6.Color = Color3.fromRGB(86, 86, 86)
+	UIStroke_6.Thickness = 2.000
+
+	ImageLabel_2.Parent = Get_Key_button
+	ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ImageLabel_2.BackgroundTransparency = 1.000
+	ImageLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	ImageLabel_2.BorderSizePixel = 0
+	ImageLabel_2.Position = UDim2.new(0.05982906, 0, 0.15625, 0)
+	ImageLabel_2.Size = UDim2.new(0, 20, 0, 21)
+	ImageLabel_2.Image = "rbxassetid://104218902441340"
+
+	MainButton_2.Name = "MainButton"
+	MainButton_2.Parent = Get_Key_button
+	MainButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	MainButton_2.BackgroundTransparency = 1.000
+	MainButton_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	MainButton_2.BorderSizePixel = 0
+	MainButton_2.Position = UDim2.new(0.224137932, 0, -0.03125, 0)
+	MainButton_2.Size = UDim2.new(0, 81, 0, 32)
+	MainButton_2.Font = Enum.Font.Ubuntu
+	MainButton_2.Text = "Get Link"
+	MainButton_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+	MainButton_2.TextSize = 14.000
+	MainButton_2.MouseButton1Click:Connect(function()
+		setclipboard(KeyGuardLibrary.getLink())
+		Key_Enter.Text = "Link successfully copied."
+		wait(4)
+		Key_Enter.Text = ""
+	end)
+
+
+	Check_Key_Button.Name = "Check_Key_Button"
+	Check_Key_Button.Parent = Buttons
+	Check_Key_Button.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+	Check_Key_Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Check_Key_Button.BorderSizePixel = 0
+	Check_Key_Button.Position = UDim2.new(0.724948704, 0, 0.655769527, 0)
+	Check_Key_Button.Size = UDim2.new(0, 116, 0, 32)
+
+	UICorner_7.Parent = Check_Key_Button
+
+	UIStroke_7.Parent = Check_Key_Button
+	UIStroke_7.Color = Color3.fromRGB(86, 86, 86)
+	UIStroke_7.Thickness = 2.000
+
+	ImageLabel_3.Parent = Check_Key_Button
+	ImageLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ImageLabel_3.BackgroundTransparency = 1.000
+	ImageLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	ImageLabel_3.BorderSizePixel = 0
+	ImageLabel_3.Position = UDim2.new(0.05982906, 0, 0.15625, 0)
+	ImageLabel_3.Size = UDim2.new(0, 20, 0, 21)
+	ImageLabel_3.Image = "rbxassetid://114091711689734"
+
+	MainButton_3.Name = "MainButton"
+	MainButton_3.Parent = Check_Key_Button
+	MainButton_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	MainButton_3.BackgroundTransparency = 1.000
+	MainButton_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	MainButton_3.BorderSizePixel = 0
+	MainButton_3.Position = UDim2.new(0.224137932, 0, -0.03125, 0)
+	MainButton_3.Size = UDim2.new(0, 81, 0, 32)
+	MainButton_3.Font = Enum.Font.Ubuntu
+	MainButton_3.Text = "Check Key"
+	MainButton_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+	MainButton_3.TextSize = 14.000
+	MainButton_3.MouseButton1Click:Connect(function()
+		if (KeyGuardLibrary.validateDefaultKey(Key_Enter.Text) == trueData or KeyGuardLibrary.validatePremiumKey(Key_Enter.Text) == trueData) then
+			print("Key is Valid")
+			writefile("HybridKey.txt", tostring(Key_Enter.Text))
+			Key_System_UI:Destroy()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/main%20ui",true))()
+			enableautoexec()
+		else
+			print("Key is not Valid")
+			Key_Enter.PlaceholderText = "Key is not valid!"
+		end
+	end)
+	MainButton_4.Name = "MainButton"
+	MainButton_4.Parent = Check_Key_Button
+	MainButton_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	MainButton_4.BackgroundTransparency = 1.000
+	MainButton_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	MainButton_4.BorderSizePixel = 0
+	MainButton_4.Position = UDim2.new(-2.47413802, 0, 1.25, 0)
+	MainButton_4.Size = UDim2.new(0, 342, 0, 32)
+	MainButton_4.Font = Enum.Font.Ubuntu
+	MainButton_4.Text = "Complete a 1-step key system which lasts 24 hours to get acess to Hybrid"
+	MainButton_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+	MainButton_4.TextSize = 16.000
+
+	-- Scripts:
+
+	local function ILSCW_script() -- MainButton.LocalScript 
+		local script = Instance.new('LocalScript', MainButton)
+
+		script.Parent.MouseButton1Click:Connect(function()
+			setclipboard("https://discord.gg/2N2dxfjYEX")
+		end)
+	end
+	coroutine.wrap(ILSCW_script)()
+	local function SULUP_script() -- Main_Frame.LocalScript 
+		local script = Instance.new('LocalScript', Main_Frame)
+
+		local UIS = game:GetService('UserInputService')
+		local frame = script.Parent
+		local dragToggle = nil
+		local dragSpeed = 0.25
+		local dragStart = nil
+		local startPos = nil
+
+		local function updateInput(input)
+			local delta = input.Position - dragStart
+			local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+				startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+			game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+		end
+
+		frame.InputBegan:Connect(function(input)
+			if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
+				dragToggle = true
+				dragStart = input.Position
+				startPos = frame.Position
+				input.Changed:Connect(function()
+					if input.UserInputState == Enum.UserInputState.End then
+						dragToggle = false
+					end
+				end)
+			end
+		end)
+
+		UIS.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+				if dragToggle then
+					updateInput(input)
+				end
+			end
+		end)
+	end
+	coroutine.wrap(SULUP_script)()
