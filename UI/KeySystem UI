@@ -1,4 +1,4 @@
-local Testkeysys = Instance.new("ScreenGui")
+	local Testkeysys = Instance.new("ScreenGui")
 	local Frame = Instance.new("Frame")
 	local UICorner = Instance.new("UICorner")
 	local PutKey = Instance.new("TextBox")
