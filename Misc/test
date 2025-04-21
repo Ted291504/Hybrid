@@ -575,7 +575,7 @@ local function EUHD_script() -- Paste.LocalScript
 	local script = Instance.new('LocalScript', Paste)
 
 	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Parent.TextSig.Text = getClipboard()
+		script.Parent.Parent.Parent.TextSig.Text = getclipboard()
 	end)
 end
 coroutine.wrap(EUHD_script)()
