@@ -48,7 +48,6 @@ local UIStroke_10 = Instance.new("UIStroke")
 local UpdateLog = Instance.new("TextLabel")
 local Update_text = Instance.new("TextLabel")
 local Line = Instance.new("TextLabel")
-local Update_text_2 = Instance.new("TextLabel")
 local UIStroke_11 = Instance.new("UIStroke")
 local Console = Instance.new("Frame")
 local UICorner_12 = Instance.new("UICorner")
@@ -320,10 +319,10 @@ Version.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Version.BackgroundTransparency = 1.000
 Version.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Version.BorderSizePixel = 0
-Version.Position = UDim2.new(-0.00240909355, 0, 5.69009399, 0)
+Version.Position = UDim2.new(-0.0386081897, 0, 5.71640968, 0)
 Version.Size = UDim2.new(0, 50, 0, 19)
 Version.Font = Enum.Font.TitilliumWeb
-Version.Text = "Version"
+Version.Text = "V2.6.0"
 Version.TextColor3 = Color3.fromRGB(54, 54, 54)
 Version.TextSize = 15.000
 
@@ -380,19 +379,6 @@ Line.Text = "----------"
 Line.TextColor3 = Color3.fromRGB(54, 54, 54)
 Line.TextSize = 35.000
 
-Update_text_2.Name = "Update_text"
-Update_text_2.Parent = Updatelog
-Update_text_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Update_text_2.BackgroundTransparency = 1.000
-Update_text_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Update_text_2.BorderSizePixel = 0
-Update_text_2.Position = UDim2.new(-0.0478184298, 0, 0.250208855, 0)
-Update_text_2.Size = UDim2.new(0, 100, 0, 43)
-Update_text_2.Font = Enum.Font.TitilliumWeb
-Update_text_2.Text = "+ Racism"
-Update_text_2.TextColor3 = Color3.fromRGB(54, 54, 54)
-Update_text_2.TextSize = 30.000
-
 UIStroke_11.Parent = Home
 UIStroke_11.Color = Color3.fromRGB(35, 35, 35)
 UIStroke_11.Thickness = 3.000
@@ -439,7 +425,7 @@ Open.Image = "rbxassetid://72310455670962"
 
 -- Scripts:
 
-local function ARDIM_script() -- TextSig.LocalScript 
+local function BTYX_script() -- TextSig.LocalScript 
 	local script = Instance.new('LocalScript', TextSig)
 
 	local textBox = script.Parent
@@ -568,32 +554,32 @@ local function ARDIM_script() -- TextSig.LocalScript
 		end)
 	end)
 end
-coroutine.wrap(ARDIM_script)()
-local function JBES_script() -- Execute.LocalScript 
+coroutine.wrap(BTYX_script)()
+local function NJBQG_script() -- Execute.LocalScript 
 	local script = Instance.new('LocalScript', Execute)
 
 	script.Parent.MouseButton1Click:Connect(function()
-		loadstring(script.Parent.Parent.TextSig.Text)()
+		loadstring(script.Parent.Parent.Parent.TextSig.Text)()
 	end)
 end
-coroutine.wrap(JBES_script)()
-local function VATOD_script() -- Clear.LocalScript 
+coroutine.wrap(NJBQG_script)()
+local function CKLUJCY_script() -- Clear.LocalScript 
 	local script = Instance.new('LocalScript', Clear)
 
 	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.TextSig.Text = ""
+		script.Parent.Parent.Parent.TextSig.Text = ""
 	end)
 end
-coroutine.wrap(VATOD_script)()
-local function DFWYHR_script() -- Paste.LocalScript 
+coroutine.wrap(CKLUJCY_script)()
+local function EUHD_script() -- Paste.LocalScript 
 	local script = Instance.new('LocalScript', Paste)
 
 	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.TextSig.Text = getClipboard()
+		script.Parent.Parent.Parent.TextSig.Text = getClipboard()
 	end)
 end
-coroutine.wrap(DFWYHR_script)()
-local function WORE_script() -- Editor_Button.LocalScript 
+coroutine.wrap(EUHD_script)()
+local function YUWUSV_script() -- Editor_Button.LocalScript 
 	local script = Instance.new('LocalScript', Editor_Button)
 
 	local button = script.Parent
@@ -607,8 +593,8 @@ local function WORE_script() -- Editor_Button.LocalScript
 		console.Visible =  false
 	end)
 end
-coroutine.wrap(WORE_script)()
-local function RNVFLA_script() -- Home_Button.LocalScript 
+coroutine.wrap(YUWUSV_script)()
+local function VJVVSN_script() -- Home_Button.LocalScript 
 	local script = Instance.new('LocalScript', Home_Button)
 
 	local button = script.Parent
@@ -622,8 +608,8 @@ local function RNVFLA_script() -- Home_Button.LocalScript
 		console.Visible =  false
 	end)
 end
-coroutine.wrap(RNVFLA_script)()
-local function BTBHK_script() -- Console_Button.LocalScript 
+coroutine.wrap(VJVVSN_script)()
+local function YOSVR_script() -- Console_Button.LocalScript 
 	local script = Instance.new('LocalScript', Console_Button)
 
 	local button = script.Parent
@@ -637,8 +623,8 @@ local function BTBHK_script() -- Console_Button.LocalScript
 		console.Visible =  true
 	end)
 end
-coroutine.wrap(BTBHK_script)()
-local function FQRD_script() -- Close.LocalScript 
+coroutine.wrap(YOSVR_script)()
+local function JYKHFRJ_script() -- Close.LocalScript 
 	local script = Instance.new('LocalScript', Close)
 
 	script.Parent.MouseButton1Click:Connect(function() 
@@ -646,8 +632,8 @@ local function FQRD_script() -- Close.LocalScript
 		script.Parent.Parent.Parent.Parent.Open.Visible = true
 	end)
 end
-coroutine.wrap(FQRD_script)()
-local function FKZTVNC_script() -- Version.LocalScript 
+coroutine.wrap(JYKHFRJ_script)()
+local function ACGS_script() -- Version.LocalScript 
 	local script = Instance.new('LocalScript', Version)
 
 	local HttpService = game:GetService("HttpService")
@@ -665,8 +651,8 @@ local function FKZTVNC_script() -- Version.LocalScript
 	
 	txt.Text = "V"..version
 end
-coroutine.wrap(FKZTVNC_script)()
-local function RKPCAI_script() -- Results.LocalScript 
+coroutine.wrap(ACGS_script)()
+local function RTCETIU_script() -- Results.LocalScript 
 	local script = Instance.new('LocalScript', Results)
 
 	local consoleFrame = script.Parent
@@ -704,8 +690,8 @@ local function RKPCAI_script() -- Results.LocalScript
 		addLog(message, messageType)
 	end)
 end
-coroutine.wrap(RKPCAI_script)()
-local function KFNVC_script() -- Main.LocalScript 
+coroutine.wrap(RTCETIU_script)()
+local function BEDKGKO_script() -- Main.LocalScript 
 	local script = Instance.new('LocalScript', Main)
 
 	local UIS = game:GetService('UserInputService')
@@ -743,8 +729,8 @@ local function KFNVC_script() -- Main.LocalScript
 		end
 	end)
 end
-coroutine.wrap(KFNVC_script)()
-local function SKYW_script() -- Open.LocalScript 
+coroutine.wrap(BEDKGKO_script)()
+local function IDUL_script() -- Open.LocalScript 
 	local script = Instance.new('LocalScript', Open)
 
 	script.Parent.MouseButton1Click:Connect(function() 
@@ -752,4 +738,4 @@ local function SKYW_script() -- Open.LocalScript
 		script.Parent.Visible = false
 	end)
 end
-coroutine.wrap(SKYW_script)()
+coroutine.wrap(IDUL_script)()
