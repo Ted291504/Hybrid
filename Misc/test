@@ -639,16 +639,19 @@ local function ACGS_script() -- Version.LocalScript
 	local HttpService = game:GetService("HttpService")
 	local txt = script.Parent
 	local version_link = "https://hybrid-api.onrender.com/hybrid-json"
-	
+
 	local response = request({
 		Url = version_link,
-		Method = "GET"
+		Method = "GET",
+		Headers = {
+			["User-Agent"] = "Hybrid UI"
+		}
 	})
-	
-	
+
+
 	local data = HttpService:JSONDecode(response.Body)
 	local version = data.Versions.Hybrid.Hybrid_Version
-	
+
 	txt.Text = "V"..version
 end
 coroutine.wrap(ACGS_script)()
