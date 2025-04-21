@@ -1,21 +1,27 @@
+local enableautoexec = clonefunction(client.enableautoexec);
+setreadonly(client, false);
+client.enableautoexec = nil
+setreadonly(client, true);
+
 print("Key system starting...")
 local Key_Sys_Online = true
 
 if Key_Sys_Online == true then
 	local KeyGuardLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/nathzzi/Rift-Android/refs/heads/main/keyguardian/keyguardianlibrary.lua"))()
-	local trueData = "729b2d0813534812951c1ead7ee7e10a"
-	local falseData = "a9051db43f4e452fa47e4c81a0727cb6"
+	local trueData = "6fcea905dc224035a098cc29bd559cea"
+	local falseData = "fc86e7ae09cc41578337a76d8585b0f5"
 
 	local KeySys = KeyGuardLibrary.Set({
-		publicToken = "e423a2fdba5842a68919e6f8fb714064",
-		privateToken = "930ecef53c674a3bb5bca1576577716f",
+		publicToken = "1ceea3083f0a4c46aa50013ba25226d7",
+		privateToken = "4d87c0e28ff846fbbff9ff1a70c299eb",
 		trueData = trueData,
 		falseData = falseData,
 	})
 
 	if isfile("HybridKey.txt") and (KeyGuardLibrary.validateDefaultKey(readfile("HybridKey.txt")) == trueData or KeyGuardLibrary.validatePremiumKey(readfile("HybridKey.txt"))) == trueData then
 		print("Already has a valid key")
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Main%20UI",true))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/main%20ui",true))()
+		enableautoexec()
 	else
 		local Key_System_UI = Instance.new("ScreenGui")
 		local Main_Frame = Instance.new("Frame")
@@ -257,7 +263,8 @@ if Key_Sys_Online == true then
 				print("Key is Valid")
 				writefile("HybridKey.txt", tostring(Key_Enter.Text))
 				Key_System_UI:Destroy()
-				loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Main%20UI",true))()
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/main%20ui",true))()
+				enableautoexec()
 			else
 				print("Key is not Valid")
 				Key_Enter.PlaceholderText = "Key is not valid!"
@@ -361,5 +368,5 @@ if Key_Sys_Online == true then
 	end
 else 
 	warn("Key System manually disabled because KeyGuardian is down or another reason just ask diet coke.")
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Main%20UI",true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/main%20ui",true))()
 end
