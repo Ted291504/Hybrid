@@ -6,7 +6,7 @@ local Welcome = Instance.new("TextLabel")
 local Loading = Instance.new("TextLabel")
 
 Hybrid_Loader.Name = "Hybrid_Loader"
-Hybrid_Loader.Parent = cloneref(gethui()) -- Safety first!
+Hybrid_Loader.Parent = cloneref(gethui())
 Hybrid_Loader.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 Hybrid_Loader.ResetOnSpawn = false
 
@@ -15,7 +15,8 @@ Main.Parent = Hybrid_Loader
 Main.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
 Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Main.BorderSizePixel = 0
-Main.Position = UDim2.new(0.349249661, 0, 0.189259097, 0)
+Main.Position = UDim2.new(0.5, 0, -1, 0)
+Main.AnchorPoint = Vector2.new(0.5, 0)
 Main.Size = UDim2.new(0, 263, 0, 211)
 
 UICorner.Parent = Main
@@ -49,7 +50,22 @@ Loading.Text = "Loading"
 Loading.TextColor3 = Color3.fromRGB(54, 54, 54)
 Loading.TextSize = 25.000
 
-local function IXTXFY_script() -- Loading.LocalScript 
+local TweenService = game:GetService("TweenService")
+local function showUI()
+	TweenService:Create(Main, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+		Position = UDim2.new(0.5, 0, 0.2, 0)
+	}):Play()
+end
+
+local function hideUI()
+	TweenService:Create(Main, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {
+		Position = UDim2.new(0.5, 0, -1, 0)
+	}):Play()
+end
+
+showUI()
+
+local function IXTXFY_script()
 	local script = Instance.new('LocalScript', Loading)
 
 	local key = readfile("HybridKey.txt")
@@ -81,104 +97,20 @@ local function IXTXFY_script() -- Loading.LocalScript
 		task.wait(1)
 		txt.Text = "Loading Main UI"
 		task.wait(2)
+		hideUI()
+		task.wait(0.6)
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Main%20UI", true))()
 		Hybrid_Loader:Destroy()
 	else
-		local Notification = Instance.new("Frame")
-		local UICorner = Instance.new("UICorner")
-		local UIStroke = Instance.new("UIStroke")
-		local Title = Instance.new("TextLabel")
-		local Description = Instance.new("TextLabel")
-
-		Notification.Name = "Notification"
-		Notification.Parent = Hybrid_Loader
-		Notification.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
-		Notification.BorderColor3 = Color3.fromRGB(0, 0, 0)
-		Notification.BorderSizePixel = 0
-		Notification.Position = UDim2.new(0.754433811, 0, 0.82206881, 0)
-		Notification.Size = UDim2.new(0, 155, 0, 55)
-
-		UICorner.Parent = Notification
-
-		UIStroke.Parent = Notification
-		UIStroke.Color = Color3.fromRGB(35, 35, 35)
-
-		Title.Name = "Title"
-		Title.Parent = Notification
-		Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-		Title.BackgroundTransparency = 1.000
-		Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
-		Title.BorderSizePixel = 0
-		Title.Position = UDim2.new(0.175834402, 0, -0.130082011, 0)
-		Title.Size = UDim2.new(0, 100, 0, 38)
-		Title.Font = Enum.Font.SourceSans
-		Title.Text = "Invalid Key!"
-		Title.TextColor3 = Color3.fromRGB(54, 54, 54)
-		Title.TextSize = 20.000
-		Title.TextWrapped = true
-
-		Description.Name = "Description"
-		Description.Parent = Notification
-		Description.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-		Description.BackgroundTransparency = 1.000
-		Description.BorderColor3 = Color3.fromRGB(0, 0, 0)
-		Description.BorderSizePixel = 0
-		Description.Position = UDim2.new(-0.0580645166, 0, 0.307366937, 0)
-		Description.Size = UDim2.new(0, 173, 0, 38)
-		Description.Font = Enum.Font.SourceSans
-		Description.Text = "Your key is invalid!"
-		Description.TextColor3 = Color3.fromRGB(54, 54, 54)
-		Description.TextSize = 15.000
-		Description.TextWrapped = true
-
-		local function FGFO_script() -- Notification.LocalScript 
-			local script = Instance.new('LocalScript', Notification)
-
-			local TweenService = game:GetService("TweenService")
-			local uiFrame = script.Parent
-			local stroke = script.Parent.UIStroke
-
-			uiFrame.AnchorPoint = Vector2.new(1, 1)
-			uiFrame.Position = UDim2.new(1, 200, 1, -10)
-			uiFrame.BackgroundTransparency = 1
-			stroke.Transparency = 1
-			uiFrame.Visible = true
-
-			local fadeIn = TweenService:Create(uiFrame, TweenInfo.new(0.3), {BackgroundTransparency = 0})
-			local fadeOut = TweenService:Create(uiFrame, TweenInfo.new(0.3), {BackgroundTransparency = 1})
-
-			local strokeIn = TweenService:Create(stroke, TweenInfo.new(0.3), {Transparency = 0})
-			local strokeOut = TweenService:Create(stroke, TweenInfo.new(0.3), {Transparency = 1})
-
-			local slideIn = TweenService:Create(uiFrame, TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-				Position = UDim2.new(1, -10, 1, -10)
-			})
-
-			local slideOut = TweenService:Create(uiFrame, TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {
-				Position = UDim2.new(1, 200, 1, -10)
-			})
-
-			fadeIn:Play()
-			strokeIn:Play()
-			slideIn:Play()
-			slideIn.Completed:Wait()
-
-			wait(2)
-
-			fadeOut:Play()
-			strokeOut:Play()
-			slideOut:Play()
-
-		end
-		coroutine.wrap(FGFO_script)()
-
-		task.wait(1)
 		txt.Text = "Invalid Key"
 		task.wait(1)
 		txt.Text = "Loading Key System"
 		task.wait(2)
+		hideUI()
+		task.wait(0.6)
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Main%20UI", true))()
 		Hybrid_Loader:Destroy()
 	end
 end
+
 coroutine.wrap(IXTXFY_script)()
