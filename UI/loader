@@ -173,7 +173,7 @@ local function IXTXFY_script()
 		task.wait(1)
 		txt.Text = "Loading Key System"
 		task.wait(2)
-		print("Monkey")
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Key%20System"))()
 		Hybrid_Loader:Destroy()
 	end
 end
