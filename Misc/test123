@@ -57,4 +57,4 @@ local function getKeyInfo(input)
 		timeLabel.Text = "API request failed."
 	end
 end
-getKeyInfo("037e76e61b9c9c58d1d13eae3f1a6495")
+getKeyInfo("1cdb8cf6c853766ab9c8276162a4682f")
