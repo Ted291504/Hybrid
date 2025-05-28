@@ -45,8 +45,9 @@ local function getKeyInfo(input)
 	if response.Success then
 		local data = HttpService:JSONDecode(response.Body)
 		if data.expiration then
+			local cleanDate = data.expiration:match("^(.-)%.") or data.expiration
 			local success, expTime = pcall(function()
-				return DateTime.fromIso8601(data.expiration):ToUnixTimestamp()
+				return DateTime.fromIso8601(cleanDate):ToUnixTimestamp()
 			end)
 			if success then
 				local now = os.time()
