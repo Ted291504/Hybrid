@@ -1,0 +1,66 @@
+local HttpService = game:GetService("HttpService")
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+-- UI Setup
+local gui = Instance.new("ScreenGui", player:WaitForChild("PlayerGui"))
+gui.Name = "KeyTimerUI"
+
+local frame = Instance.new("Frame", gui)
+frame.Size = UDim2.new(0, 300, 0, 120)
+frame.Position = UDim2.new(0.5, -150, 0.5, -60)
+frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+frame.BorderSizePixel = 0
+
+local title = Instance.new("TextLabel", frame)
+title.Size = UDim2.new(1, 0, 0, 30)
+title.BackgroundTransparency = 1
+title.Text = "Key Time Remaining"
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.Font = Enum.Font.GothamBold
+title.TextSize = 18
+
+local timeLabel = Instance.new("TextLabel", frame)
+timeLabel.Position = UDim2.new(0, 0, 0, 40)
+timeLabel.Size = UDim2.new(1, 0, 0, 60)
+timeLabel.BackgroundTransparency = 1
+timeLabel.TextColor3 = Color3.new(1, 1, 1)
+timeLabel.Font = Enum.Font.Gotham
+timeLabel.TextSize = 22
+timeLabel.Text = "Checking..."
+
+local function formatTime(seconds)
+	local days = math.floor(seconds / 86400)
+	local hours = math.floor((seconds % 86400) / 3600)
+	local minutes = math.floor((seconds % 3600) / 60)
+	return string.format("%dD %dH %dM", days, hours, minutes)
+end
+
+local function getKeyInfo(input)
+	local url = "https://keysystem-s10c.onrender.com/getKeyInfo?" .. (input:match("^%d+%.%d+%.%d+%.%d+$") and "ip=" or "key=") .. input
+	local response = request({
+		Url = url,
+		Method = "GET"
+	})
+	if response.Success then
+		local data = HttpService:JSONDecode(response.Body)
+		if data.expiration then
+			local success, expTime = pcall(function()
+				return DateTime.fromIso8601(data.expiration):ToUnixTimestamp()
+			end)
+			if success then
+				local now = os.time()
+				local secondsLeft = math.max(expTime - now, 0)
+				timeLabel.Text = formatTime(secondsLeft)
+			else
+				timeLabel.Text = "Invalid expiration format."
+			end
+		else
+			timeLabel.Text = "Invalid key."
+		end
+	else
+		timeLabel.Text = "API request failed."
+	end
+end
+
+getKeyInfo("7debbc415b9712fdbf6bcfce317a7bdd")
