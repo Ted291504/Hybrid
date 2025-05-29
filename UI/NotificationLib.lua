@@ -58,8 +58,8 @@ local function createNotification(titleText, descText)
     local progressBar = Instance.new("Frame", frame)
     progressBar.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
     progressBar.BorderSizePixel = 0
-    progressBar.Size = UDim2.new(1, 0, 0, 6)
-    progressBar.Position = UDim2.new(0, 0, 1, -6)
+    progressBar.Size = UDim2.new(1, -24, 0, 6) -- fit width minus padding
+    progressBar.Position = UDim2.new(0, 12, 1, -10) -- aligned inside with padding
 
     local progressCorner = Instance.new("UICorner", progressBar)
     progressCorner.CornerRadius = UDim.new(0, 3)
