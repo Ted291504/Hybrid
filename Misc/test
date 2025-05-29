@@ -2,743 +2,297 @@
 
 -- Instances:
 
-local Hybrid_new = Instance.new("ScreenGui")
+local Hybrid_Loader = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
 local UIStroke = Instance.new("UIStroke")
-local Editor = Instance.new("Frame")
-local TextSig = Instance.new("TextBox")
+local Welcome = Instance.new("TextLabel")
+local Loading = Instance.new("TextLabel")
+local Notification = Instance.new("Frame")
 local UICorner_2 = Instance.new("UICorner")
 local UIStroke_2 = Instance.new("UIStroke")
-local UICorner_3 = Instance.new("UICorner")
-local UIStroke_3 = Instance.new("UIStroke")
-local Execute_frame = Instance.new("Frame")
-local Execute = Instance.new("ImageButton")
-local UIStroke_4 = Instance.new("UIStroke")
-local UICorner_4 = Instance.new("UICorner")
-local Clear_frame = Instance.new("Frame")
-local Clear = Instance.new("ImageButton")
-local UIStroke_5 = Instance.new("UIStroke")
-local UICorner_5 = Instance.new("UICorner")
-local Paste_frame = Instance.new("Frame")
-local Paste = Instance.new("ImageButton")
-local UIStroke_6 = Instance.new("UIStroke")
-local UICorner_6 = Instance.new("UICorner")
-local Side = Instance.new("Frame")
-local UICorner_7 = Instance.new("UICorner")
-local UIStroke_7 = Instance.new("UIStroke")
-local Editor_Button = Instance.new("ImageButton")
-local Home_Button = Instance.new("ImageButton")
-local Console_Button = Instance.new("ImageButton")
-local Top = Instance.new("Frame")
-local UICorner_8 = Instance.new("UICorner")
-local UIStroke_8 = Instance.new("UIStroke")
-local Logo = Instance.new("ImageButton")
-local Close = Instance.new("TextButton")
-local Home = Instance.new("Frame")
-local UICorner_9 = Instance.new("UICorner")
-local welcome_frame = Instance.new("Frame")
-local UICorner_10 = Instance.new("UICorner")
-local UIStroke_9 = Instance.new("UIStroke")
-local Welcome = Instance.new("TextLabel")
-local Version = Instance.new("TextLabel")
-local Updatelog = Instance.new("Frame")
-local UICorner_11 = Instance.new("UICorner")
-local UIStroke_10 = Instance.new("UIStroke")
-local UpdateLog = Instance.new("TextLabel")
-local Update_text = Instance.new("TextLabel")
-local Line = Instance.new("TextLabel")
-local UIStroke_11 = Instance.new("UIStroke")
-local Console = Instance.new("Frame")
-local UICorner_12 = Instance.new("UICorner")
-local UIStroke_12 = Instance.new("UIStroke")
-local Results = Instance.new("ScrollingFrame")
-local UIListLayout = Instance.new("UIListLayout")
-local Open = Instance.new("ImageButton")
+local Title = Instance.new("TextLabel")
+local Description = Instance.new("TextLabel")
 
 --Properties:
 
-Hybrid_new.Name = "Hybrid_new"
-Hybrid_new.Parent = cloneref(game:GetService("CoreGui"))
-Hybrid_new.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-Hybrid_new.ResetOnSpawn = false
+Hybrid_Loader.Name = "Hybrid_Loader"
+Hybrid_Loader.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Hybrid_Loader.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Main.Name = "Main"
-Main.Parent = Hybrid_new
+Main.Parent = Hybrid_Loader
 Main.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
 Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Main.BorderSizePixel = 0
-Main.Position = UDim2.new(0.0952581093, 0, 0.0477750562, 0)
-Main.Size = UDim2.new(0, 500, 0, 296)
+Main.Position = UDim2.new(0.349249661, 0, 0.189259097, 0)
+Main.Size = UDim2.new(0, 263, 0, 211)
 
 UICorner.Parent = Main
 
 UIStroke.Parent = Main
 UIStroke.Color = Color3.fromRGB(35, 35, 35)
-UIStroke.Thickness = 2.000
-
-Editor.Name = "Editor"
-Editor.Parent = Main
-Editor.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
-Editor.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Editor.BorderSizePixel = 0
-Editor.Position = UDim2.new(0.119421571, 0, 0.154333159, 0)
-Editor.Size = UDim2.new(0, 432, 0, 243)
-Editor.Visible = false
-
-TextSig.Name = "TextSig"
-TextSig.Parent = Editor
-TextSig.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextSig.BackgroundTransparency = 1.000
-TextSig.BorderColor3 = Color3.fromRGB(255, 255, 255)
-TextSig.BorderSizePixel = 4
-TextSig.Position = UDim2.new(0.0204686765, 0, 0.0273780357, 0)
-TextSig.Size = UDim2.new(0, 416, 0, 227)
-TextSig.Font = Enum.Font.TitilliumWeb
-TextSig.PlaceholderColor3 = Color3.fromRGB(94, 94, 94)
-TextSig.PlaceholderText = "print(\"Hybrid Android\")"
-TextSig.Text = ""
-TextSig.TextColor3 = Color3.fromRGB(35, 35, 35)
-TextSig.TextSize = 18.000
-TextSig.TextWrapped = true
-TextSig.TextXAlignment = Enum.TextXAlignment.Left
-TextSig.TextYAlignment = Enum.TextYAlignment.Top
-
-UICorner_2.Parent = TextSig
-
-UIStroke_2.Parent = TextSig
-UIStroke_2.Color = Color3.fromRGB(35, 35, 35)
-UIStroke_2.Thickness = 2.000
-UIStroke_2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-UICorner_3.Parent = Editor
-
-UIStroke_3.Parent = Editor
-UIStroke_3.Color = Color3.fromRGB(35, 35, 35)
-UIStroke_3.Thickness = 2.000
-
-Execute_frame.Name = "Execute_frame"
-Execute_frame.Parent = Editor
-Execute_frame.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
-Execute_frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Execute_frame.BorderSizePixel = 0
-Execute_frame.Position = UDim2.new(0.858779192, 0, 0.799787879, 0)
-Execute_frame.Size = UDim2.new(0, 48, 0, 32)
-
-Execute.Name = "Execute"
-Execute.Parent = Execute_frame
-Execute.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Execute.BackgroundTransparency = 1.000
-Execute.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Execute.BorderSizePixel = 0
-Execute.Position = UDim2.new(0.219825745, 0, 0.121193886, 0)
-Execute.Size = UDim2.new(0, 26, 0, 23)
-Execute.Image = "rbxassetid://111121478238230"
-
-UIStroke_4.Parent = Execute_frame
-UIStroke_4.Color = Color3.fromRGB(35, 35, 35)
-UIStroke_4.Thickness = 2.000
-UIStroke_4.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-UICorner_4.Parent = Execute_frame
-
-Clear_frame.Name = "Clear_frame"
-Clear_frame.Parent = Editor
-Clear_frame.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
-Clear_frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Clear_frame.BorderSizePixel = 0
-Clear_frame.Position = UDim2.new(0.727802575, 0, 0.799787879, 0)
-Clear_frame.Size = UDim2.new(0, 48, 0, 32)
-
-Clear.Name = "Clear"
-Clear.Parent = Clear_frame
-Clear.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Clear.BackgroundTransparency = 1.000
-Clear.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Clear.BorderSizePixel = 0
-Clear.Position = UDim2.new(0.26026535, 0, 0.183693886, 0)
-Clear.Size = UDim2.new(0, 23, 0, 20)
-Clear.Image = "rbxassetid://120127860996365"
-
-UIStroke_5.Parent = Clear_frame
-UIStroke_5.Color = Color3.fromRGB(35, 35, 35)
-UIStroke_5.Thickness = 2.000
-UIStroke_5.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-UICorner_5.Parent = Clear_frame
-
-Paste_frame.Name = "Paste_frame"
-Paste_frame.Parent = Editor
-Paste_frame.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
-Paste_frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Paste_frame.BorderSizePixel = 0
-Paste_frame.Position = UDim2.new(0.599045634, 0, 0.799787879, 0)
-Paste_frame.Size = UDim2.new(0, 48, 0, 32)
-
-Paste.Name = "Paste"
-Paste.Parent = Paste_frame
-Paste.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Paste.BackgroundTransparency = 1.000
-Paste.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Paste.BorderSizePixel = 0
-Paste.Position = UDim2.new(0.240657806, 0, 0.121193886, 0)
-Paste.Size = UDim2.new(0, 23, 0, 23)
-Paste.Image = "rbxassetid://82697895065869"
-
-UIStroke_6.Parent = Paste_frame
-UIStroke_6.Color = Color3.fromRGB(35, 35, 35)
-UIStroke_6.Thickness = 2.000
-UIStroke_6.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-UICorner_6.Parent = Paste_frame
-
-Side.Name = "Side"
-Side.Parent = Main
-Side.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
-Side.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Side.BorderSizePixel = 0
-Side.Position = UDim2.new(0.0148377689, 0, 0.157283068, 0)
-Side.Size = UDim2.new(0, 43, 0, 243)
-
-UICorner_7.Parent = Side
-
-UIStroke_7.Parent = Side
-UIStroke_7.Color = Color3.fromRGB(35, 35, 35)
-UIStroke_7.Thickness = 2.000
-
-Editor_Button.Name = "Editor_Button"
-Editor_Button.Parent = Side
-Editor_Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Editor_Button.BackgroundTransparency = 1.000
-Editor_Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Editor_Button.BorderSizePixel = 0
-Editor_Button.Position = UDim2.new(0.209302321, 0, 0.393457472, 0)
-Editor_Button.Size = UDim2.new(0, 25, 0, 24)
-Editor_Button.Image = "rbxassetid://71488984335205"
-Editor_Button.ImageColor3 = Color3.fromRGB(74, 74, 74)
-
-Home_Button.Name = "Home_Button"
-Home_Button.Parent = Side
-Home_Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Home_Button.BackgroundTransparency = 1.000
-Home_Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Home_Button.BorderSizePixel = 0
-Home_Button.Position = UDim2.new(0.209302321, 0, 0.0518936962, 0)
-Home_Button.Size = UDim2.new(0, 25, 0, 24)
-Home_Button.Image = "rbxassetid://123370313025714"
-Home_Button.ImageColor3 = Color3.fromRGB(74, 74, 74)
-
-Console_Button.Name = "Console_Button"
-Console_Button.Parent = Side
-Console_Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Console_Button.BackgroundTransparency = 1.000
-Console_Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Console_Button.BorderSizePixel = 0
-Console_Button.Position = UDim2.new(0.0232551042, 0, 0.802159786, 0)
-Console_Button.Size = UDim2.new(0, 36, 0, 35)
-Console_Button.Image = "rbxassetid://136723444124480"
-Console_Button.ImageColor3 = Color3.fromRGB(74, 74, 74)
-
-Top.Name = "Top"
-Top.Parent = Main
-Top.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
-Top.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Top.BorderSizePixel = 0
-Top.Position = UDim2.new(0.0148377689, 0, 0.0192509722, 0)
-Top.Size = UDim2.new(0, 485, 0, 33)
-
-UICorner_8.Parent = Top
-
-UIStroke_8.Parent = Top
-UIStroke_8.Color = Color3.fromRGB(35, 35, 35)
-UIStroke_8.Thickness = 2.000
-
-Logo.Name = "Logo"
-Logo.Parent = Top
-Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Logo.BackgroundTransparency = 1.000
-Logo.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Logo.BorderSizePixel = 0
-Logo.Position = UDim2.new(-0.00325883692, 0, -0.0741507784, 0)
-Logo.Size = UDim2.new(0, 42, 0, 37)
-Logo.Image = "rbxassetid://140362724170573"
-
-Close.Name = "Close"
-Close.Parent = Top
-Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Close.BackgroundTransparency = 1.000
-Close.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Close.BorderSizePixel = 0
-Close.Position = UDim2.new(0.921649396, 0, -0.0300602764, 0)
-Close.Size = UDim2.new(0, 45, 0, 35)
-Close.Font = Enum.Font.Ubuntu
-Close.Text = "X"
-Close.TextColor3 = Color3.fromRGB(54, 54, 54)
-Close.TextSize = 25.000
-
-Home.Name = "Home"
-Home.Parent = Main
-Home.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
-Home.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Home.BorderSizePixel = 0
-Home.Position = UDim2.new(0.121421538, 0, 0.157711551, 0)
-Home.Size = UDim2.new(0, 432, 0, 243)
-
-UICorner_9.Parent = Home
-
-welcome_frame.Name = "welcome_frame"
-welcome_frame.Parent = Home
-welcome_frame.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
-welcome_frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-welcome_frame.BorderSizePixel = 0
-welcome_frame.Position = UDim2.new(0.017980637, 0, 0.0271604937, 0)
-welcome_frame.Size = UDim2.new(0, 221, 0, 38)
-
-UICorner_10.Parent = welcome_frame
-
-UIStroke_9.Parent = welcome_frame
-UIStroke_9.Color = Color3.fromRGB(35, 35, 35)
-UIStroke_9.Thickness = 2.000
 
 Welcome.Name = "Welcome"
-Welcome.Parent = welcome_frame
+Welcome.Parent = Main
 Welcome.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Welcome.BackgroundTransparency = 1.000
 Welcome.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Welcome.BorderSizePixel = 0
-Welcome.Position = UDim2.new(0.0337900221, 0, -0.176113322, 0)
+Welcome.Position = UDim2.new(0.119608022, 0, -0.000103268016, 0)
 Welcome.Size = UDim2.new(0, 200, 0, 50)
 Welcome.Font = Enum.Font.TitilliumWeb
 Welcome.Text = "Welcome to Hybrid"
 Welcome.TextColor3 = Color3.fromRGB(54, 54, 54)
 Welcome.TextSize = 35.000
 
-Version.Name = "Version"
-Version.Parent = welcome_frame
-Version.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Version.BackgroundTransparency = 1.000
-Version.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Version.BorderSizePixel = 0
-Version.Position = UDim2.new(-0.0386081897, 0, 5.71640968, 0)
-Version.Size = UDim2.new(0, 50, 0, 19)
-Version.Font = Enum.Font.TitilliumWeb
-Version.Text = "V2.6.0"
-Version.TextColor3 = Color3.fromRGB(54, 54, 54)
-Version.TextSize = 15.000
+Loading.Name = "Loading"
+Loading.Parent = Main
+Loading.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Loading.BackgroundTransparency = 1.000
+Loading.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Loading.BorderSizePixel = 0
+Loading.Position = UDim2.new(0.119608022, 0, 0.658664525, 0)
+Loading.Size = UDim2.new(0, 200, 0, 50)
+Loading.Font = Enum.Font.TitilliumWeb
+Loading.Text = "Loading"
+Loading.TextColor3 = Color3.fromRGB(54, 54, 54)
+Loading.TextSize = 25.000
 
-Updatelog.Name = "Update log"
-Updatelog.Parent = Home
-Updatelog.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
-Updatelog.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Updatelog.BorderSizePixel = 0
-Updatelog.Position = UDim2.new(0.634495616, 0, 0.06379053, 0)
-Updatelog.Size = UDim2.new(0, 140, 0, 215)
+Notification.Name = "Notification"
+Notification.Parent = Hybrid_Loader
+Notification.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
+Notification.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Notification.BorderSizePixel = 0
+Notification.Position = UDim2.new(0.754433811, 0, 0.82206881, 0)
+Notification.Size = UDim2.new(0, 155, 0, 55)
+Notification.Visible = false
 
-UICorner_11.Parent = Updatelog
+UICorner_2.Parent = Notification
 
-UIStroke_10.Parent = Updatelog
-UIStroke_10.Color = Color3.fromRGB(35, 35, 35)
-UIStroke_10.Thickness = 2.000
+UIStroke_2.Parent = Notification
+UIStroke_2.Color = Color3.fromRGB(35, 35, 35)
 
-UpdateLog.Name = "UpdateLog"
-UpdateLog.Parent = Updatelog
-UpdateLog.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-UpdateLog.BackgroundTransparency = 1.000
-UpdateLog.BorderColor3 = Color3.fromRGB(0, 0, 0)
-UpdateLog.BorderSizePixel = 0
-UpdateLog.Position = UDim2.new(-0.214928329, 0, -0.044951044, 0)
-UpdateLog.Size = UDim2.new(0, 200, 0, 50)
-UpdateLog.Font = Enum.Font.TitilliumWeb
-UpdateLog.Text = "Update Log"
-UpdateLog.TextColor3 = Color3.fromRGB(54, 54, 54)
-UpdateLog.TextSize = 30.000
+Title.Name = "Title"
+Title.Parent = Notification
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Title.BorderSizePixel = 0
+Title.Position = UDim2.new(0.175834402, 0, -0.130082011, 0)
+Title.Size = UDim2.new(0, 100, 0, 38)
+Title.Font = Enum.Font.SourceSans
+Title.Text = "Invalid Key!"
+Title.TextColor3 = Color3.fromRGB(54, 54, 54)
+Title.TextSize = 20.000
+Title.TextWrapped = true
 
-Update_text.Name = "Update_text"
-Update_text.Parent = Updatelog
-Update_text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Update_text.BackgroundTransparency = 1.000
-Update_text.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Update_text.BorderSizePixel = 0
-Update_text.Position = UDim2.new(-0.0478184298, 0, 0.133929804, 0)
-Update_text.Size = UDim2.new(0, 100, 0, 43)
-Update_text.Font = Enum.Font.TitilliumWeb
-Update_text.Text = "+ New UI"
-Update_text.TextColor3 = Color3.fromRGB(54, 54, 54)
-Update_text.TextSize = 30.000
-
-Line.Name = "Line"
-Line.Parent = Updatelog
-Line.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Line.BackgroundTransparency = 1.000
-Line.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Line.BorderSizePixel = 0
-Line.Position = UDim2.new(-0.21985735, 0, 0.0186401363, 0)
-Line.Size = UDim2.new(0, 200, 0, 50)
-Line.Font = Enum.Font.TitilliumWeb
-Line.Text = "----------"
-Line.TextColor3 = Color3.fromRGB(54, 54, 54)
-Line.TextSize = 35.000
-
-UIStroke_11.Parent = Home
-UIStroke_11.Color = Color3.fromRGB(35, 35, 35)
-UIStroke_11.Thickness = 3.000
-
-Console.Name = "Console"
-Console.Parent = Main
-Console.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
-Console.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Console.BorderSizePixel = 0
-Console.Position = UDim2.new(0.121421538, 0, 0.157711551, 0)
-Console.Size = UDim2.new(0, 432, 0, 243)
-Console.Visible = false
-
-UICorner_12.Parent = Console
-
-UIStroke_12.Parent = Console
-UIStroke_12.Color = Color3.fromRGB(35, 35, 35)
-UIStroke_12.Thickness = 3.000
-
-Results.Name = "Results"
-Results.Parent = Console
-Results.Active = true
-Results.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Results.BackgroundTransparency = 1.000
-Results.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Results.BorderSizePixel = 0
-Results.Position = UDim2.new(0.0162037034, 0, 0.0291582271, 0)
-Results.Size = UDim2.new(0, 418, 0, 224)
-Results.ScrollBarImageColor3 = Color3.fromRGB(0, 0, 0)
-
-UIListLayout.Parent = Results
-UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-
-Open.Name = "Open"
-Open.Parent = Hybrid_new
-Open.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Open.BackgroundTransparency = 1.000
-Open.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Open.BorderSizePixel = 0
-Open.Position = UDim2.new(0.464698344, 0, 0.0334261842, 0)
-Open.Size = UDim2.new(0, 55, 0, 55)
-Open.Visible = false
-Open.Image = "rbxassetid://72310455670962"
+Description.Name = "Description"
+Description.Parent = Notification
+Description.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Description.BackgroundTransparency = 1.000
+Description.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Description.BorderSizePixel = 0
+Description.Position = UDim2.new(-0.0580645166, 0, 0.307366937, 0)
+Description.Size = UDim2.new(0, 173, 0, 38)
+Description.Font = Enum.Font.SourceSans
+Description.Text = "Your key is invalid!"
+Description.TextColor3 = Color3.fromRGB(54, 54, 54)
+Description.TextSize = 15.000
+Description.TextWrapped = true
 
 -- Scripts:
 
-local function BTYX_script() -- TextSig.LocalScript 
-	local script = Instance.new('LocalScript', TextSig)
+local function MGJVZTV_script() -- Loading.LocalScript 
+	local script = Instance.new('LocalScript', Loading)
 
-	local textBox = script.Parent
-	
-	-- Create background highlight label
-	local highlightLabel = Instance.new("TextLabel")
-	highlightLabel.BackgroundTransparency = 1
-	highlightLabel.Font = textBox.Font
-	highlightLabel.TextSize = textBox.TextSize
-	highlightLabel.TextXAlignment = Enum.TextXAlignment.Left
-	highlightLabel.TextYAlignment = Enum.TextYAlignment.Top
-	highlightLabel.RichText = true
-	highlightLabel.TextWrapped = true
-	highlightLabel.TextScaled = false
-	highlightLabel.ClipsDescendants = false
-	highlightLabel.ZIndex = textBox.ZIndex - 1
-	highlightLabel.Size = textBox.Size
-	highlightLabel.Position = textBox.Position
-	highlightLabel.TextColor3 = Color3.new(1, 1, 1)
-	highlightLabel.Text = ""
-	highlightLabel.Parent = textBox.Parent
-	
-	-- Transparent TextBox
-	textBox.BackgroundTransparency = 1
-	textBox.TextTransparency = 0.05
-	textBox.ClearTextOnFocus = false
-	
-	-- Helper
-	local function color(str, c)
-		return `<font color="#{c:ToHex()}">{str:gsub("&", "&amp;"):gsub("<", "&lt;"):gsub(">", "&gt;")}</font>`
-	end
-	
-	-- Keyword sets
-	local luaKeywords = {
-		["and"]=true, ["break"]=true, ["or"]=true, ["else"]=true, ["elseif"]=true,
-		["if"]=true, ["then"]=true, ["until"]=true, ["repeat"]=true, ["while"]=true,
-		["do"]=true, ["for"]=true, ["in"]=true, ["end"]=true, ["local"]=true,
-		["return"]=true, ["function"]=true, ["export"]=true,
-	}
-	local rbxGlobals = {
-		["game"]=true, ["workspace"]=true, ["script"]=true, ["Enum"]=true,
-		["Instance"]=true, ["Vector3"]=true, ["Color3"]=true, ["CFrame"]=true,
-		["math"]=true, ["wait"]=true, ["print"]=true, ["RaycastParams"]=true
-	}
-	
-	-- New theme colors
-	local colors = {
-		lua = Color3.fromRGB(222, 147, 255),
-		rbx = Color3.fromRGB(125, 200, 255),
-		string = Color3.fromRGB(123, 255, 160),
-		number = Color3.fromRGB(255, 209, 102),
-		boolean = Color3.fromRGB(255, 105, 105),
-		comment = Color3.fromRGB(130, 130, 130),
-	}
-	
-	-- Tokenizer + highlighter
-	local function highlight(text)
-		local output = {}
-	
-		for line in (text .. "\n"):gmatch("(.-)\n") do
-			local i = 1
-			while i <= #line do
-				local char = line:sub(i,i)
-	
-				-- Comment
-				if line:sub(i,i+1) == "--" then
-					table.insert(output, color(line:sub(i), colors.comment))
-					break
-	
-					-- String
-				elseif char == "\"" or char == "'" then
-					local close = i+1
-					while close <= #line do
-						local c = line:sub(close,close)
-						if c == char and line:sub(close-1,close-1) ~= "\\" then break end
-						close += 1
-					end
-					table.insert(output, color(line:sub(i, close), colors.string))
-					i = close + 1
-	
-					-- Number
-				elseif char:match("%d") then
-					local num = line:match("^%d+%.?%d*", i)
-					table.insert(output, color(num, colors.number))
-					i += #num
-	
-					-- Word
-				elseif char:match("[%a_]") then
-					local word = line:match("^[%w_]+", i)
-					if luaKeywords[word] then
-						table.insert(output, color(word, colors.lua))
-					elseif rbxGlobals[word] then
-						table.insert(output, color(word, colors.rbx))
-					elseif word == "true" or word == "false" then
-						table.insert(output, color(word, colors.boolean))
-					else
-						table.insert(output, word)
-					end
-					i += #word
-	
-				else
-					table.insert(output, char)
-					i += 1
-				end
-			end
-			table.insert(output, "\n")
-		end
-	
-		return table.concat(output)
-	end
-	
-	-- Debounced update
-	local lastText = ""
-	local updating = false
-	
-	textBox:GetPropertyChangedSignal("Text"):Connect(function()
-		if updating then return end
-		updating = true
-	
-		task.defer(function()
-			if textBox.Text ~= lastText then
-				lastText = textBox.Text
-				highlightLabel.Text = highlight(textBox.Text)
-			end
-			updating = false
-		end)
-	end)
-end
-coroutine.wrap(BTYX_script)()
-local function NJBQG_script() -- Execute.LocalScript 
-	local script = Instance.new('LocalScript', Execute)
-
-	script.Parent.MouseButton1Click:Connect(function()
-		loadstring(script.Parent.Parent.Parent.TextSig.Text)()
-	end)
-end
-coroutine.wrap(NJBQG_script)()
-local function CKLUJCY_script() -- Clear.LocalScript 
-	local script = Instance.new('LocalScript', Clear)
-
-	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Parent.TextSig.Text = ""
-	end)
-end
-coroutine.wrap(CKLUJCY_script)()
-local function EUHD_script() -- Paste.LocalScript 
-	local script = Instance.new('LocalScript', Paste)
-
-	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Parent.TextSig.Text = getclipboard()
-	end)
-end
-coroutine.wrap(EUHD_script)()
-local function YUWUSV_script() -- Editor_Button.LocalScript 
-	local script = Instance.new('LocalScript', Editor_Button)
-
-	local button = script.Parent
-	local editor = script.Parent.Parent.Parent.Editor
-	local console = script.Parent.Parent.Parent.Console
-	local home = script.Parent.Parent.Parent.Home
-	
-	button.MouseButton1Click:Connect(function()
-		editor.Visible = true
-		home.Visible = false
-		console.Visible =  false
-	end)
-end
-coroutine.wrap(YUWUSV_script)()
-local function VJVVSN_script() -- Home_Button.LocalScript 
-	local script = Instance.new('LocalScript', Home_Button)
-
-	local button = script.Parent
-	local editor = script.Parent.Parent.Parent.Editor
-	local console = script.Parent.Parent.Parent.Console
-	local home = script.Parent.Parent.Parent.Home
-	
-	button.MouseButton1Click:Connect(function()
-		editor.Visible = false
-		home.Visible = true
-		console.Visible =  false
-	end)
-end
-coroutine.wrap(VJVVSN_script)()
-local function YOSVR_script() -- Console_Button.LocalScript 
-	local script = Instance.new('LocalScript', Console_Button)
-
-	local button = script.Parent
-	local editor = script.Parent.Parent.Parent.Editor
-	local console = script.Parent.Parent.Parent.Console
-	local home = script.Parent.Parent.Parent.Home
-	
-	button.MouseButton1Click:Connect(function()
-		editor.Visible = false
-		home.Visible = false
-		console.Visible =  true
-	end)
-end
-coroutine.wrap(YOSVR_script)()
-local function JYKHFRJ_script() -- Close.LocalScript 
-	local script = Instance.new('LocalScript', Close)
-
-	script.Parent.MouseButton1Click:Connect(function() 
-		script.Parent.Parent.Parent.Visible = false
-		script.Parent.Parent.Parent.Parent.Open.Visible = true
-	end)
-end
-coroutine.wrap(JYKHFRJ_script)()
-local function ACGS_script() -- Version.LocalScript 
-	local script = Instance.new('LocalScript', Version)
-
-	local HttpService = game:GetService("HttpService")
 	local txt = script.Parent
-	local version_link = "https://hybrid-api.onrender.com/hybrid-json"
-
-	local response = request({
-		Url = version_link,
-		Method = "GET",
-		Headers = {
-			["User-Agent"] = "Hybrid UI"
-		}
-	})
-
-
-	local data = HttpService:JSONDecode(response.Body)
-	local version = data.Versions.Hybrid.Hybrid_Version
-
-	txt.Text = "V"..version
-end
-coroutine.wrap(ACGS_script)()
-local function RTCETIU_script() -- Results.LocalScript 
-	local script = Instance.new('LocalScript', Results)
-
-	local consoleFrame = script.Parent
-	local layout = consoleFrame.UIListLayout
+	local get_key_info_url = "https://keysystem-s10c.onrender.com/keyinfo/"
+	local ipify_url = "https://api.ipify.org?format=json"
+	local has_valid_key = false
 	
-	local function updateCanvasSize()
-		consoleFrame.CanvasSize = UDim2.new(0, 0, 0, layout.AbsoluteContentSize.Y)
+	local HttpService = game:GetService("HttpService")
+	
+	local function formatText(text)
+		txt.Text = text
+		task.wait(1)
 	end
 	
-	local function addLog(message, messageType)
-		local logLabel = Instance.new("TextLabel")
-		logLabel.Size = UDim2.new(1, 0, 0, 20)
-		logLabel.BackgroundTransparency = 1
-		logLabel.Font = Enum.Font.Code
-		logLabel.TextSize = 9
-		logLabel.TextXAlignment = Enum.TextXAlignment.Left
-		logLabel.TextWrapped = false
-		logLabel.ClipsDescendants = true
+	formatText("Checking Connection")
+	formatText("Connecting to Server")
+	formatText("Successfully Connected to Server")
+	formatText("Checking Key")
 	
-		if messageType == Enum.MessageType.MessageOutput then
-			logLabel.TextColor3 = Color3.fromRGB(200, 200, 200)
-		elseif messageType == Enum.MessageType.MessageWarning then
-			logLabel.TextColor3 = Color3.fromRGB(255, 200, 0)
-		elseif messageType == Enum.MessageType.MessageError then
-			logLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
-		end
-	
-		logLabel.Text = message
-		logLabel.Parent = consoleFrame
-	
-		updateCanvasSize()
-	end
-	
-	game:GetService("LogService").MessageOut:Connect(function(message, messageType)
-		addLog(message, messageType)
-	end)
-end
-coroutine.wrap(RTCETIU_script)()
-local function BEDKGKO_script() -- Main.LocalScript 
-	local script = Instance.new('LocalScript', Main)
-
-	local UIS = game:GetService('UserInputService')
-	local frame = script.Parent
-	local dragToggle = nil
-	local dragSpeed = 0.25
-	local dragStart = nil
-	local startPos = nil
-	
-	local function updateInput(input)
-		local delta = input.Position - dragStart
-		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
-			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-		game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
-	end
-	
-	frame.InputBegan:Connect(function(input)
-		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
-			dragToggle = true
-			dragStart = input.Position
-			startPos = frame.Position
-			input.Changed:Connect(function()
-				if input.UserInputState == Enum.UserInputState.End then
-					dragToggle = false
-				end
-			end)
-		end
+	local success, ipResponse = pcall(function()
+		return HttpService:GetAsync(ipify_url)
 	end)
 	
-	UIS.InputChanged:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-			if dragToggle then
-				updateInput(input)
+	if success then
+		local ipData = HttpService:JSONDecode(ipResponse)
+		local userIP = ipData.ip
+	
+		local success2, keyResponse = pcall(function()
+			return HttpService:GetAsync(get_key_info_url .. userIP)
+		end)
+	
+		if success2 then
+			local keyData = HttpService:JSONDecode(keyResponse)
+			if keyData.success == true then
+				has_valid_key = true
 			end
 		end
-	end)
+	end
+	
+	if has_valid_key == true then
+		formatText("Valid Key")
+		formatText("Loading Main UI")
+		task.wait(2)
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Main%20UI", true))()
+		Hybrid_Loader:Destroy()
+	else
+		-- Monstrum's Gui to Lua\n-- Version: 3.2
+	
+		-- Instances:
+	
+		local Notification = Instance.new("Frame")
+		local UICorner = Instance.new("UICorner")
+		local UIStroke = Instance.new("UIStroke")
+		local Title = Instance.new("TextLabel")
+		local Description = Instance.new("TextLabel")
+	
+		--Properties:
+	
+		Notification.Name = "Notification"
+		Notification.Parent = game.StarterGui.Hybrid_Loader
+		Notification.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
+		Notification.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		Notification.BorderSizePixel = 0
+		Notification.Position = UDim2.new(0.754433811, 0, 0.82206881, 0)
+		Notification.Size = UDim2.new(0, 155, 0, 55)
+	
+		UICorner.Parent = Notification
+	
+		UIStroke.Parent = Notification
+		UIStroke.Color = Color3.fromRGB(35, 35, 35)
+	
+		Title.Name = "Title"
+		Title.Parent = Notification
+		Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Title.BackgroundTransparency = 1.000
+		Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		Title.BorderSizePixel = 0
+		Title.Position = UDim2.new(0.175834402, 0, -0.130082011, 0)
+		Title.Size = UDim2.new(0, 100, 0, 38)
+		Title.Font = Enum.Font.SourceSans
+		Title.Text = "Invalid Key!"
+		Title.TextColor3 = Color3.fromRGB(54, 54, 54)
+		Title.TextSize = 20.000
+		Title.TextWrapped = true
+	
+		Description.Name = "Description"
+		Description.Parent = Notification
+		Description.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Description.BackgroundTransparency = 1.000
+		Description.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		Description.BorderSizePixel = 0
+		Description.Position = UDim2.new(-0.0580645166, 0, 0.307366937, 0)
+		Description.Size = UDim2.new(0, 173, 0, 38)
+		Description.Font = Enum.Font.SourceSans
+		Description.Text = "Your key is invalid!"
+		Description.TextColor3 = Color3.fromRGB(54, 54, 54)
+		Description.TextSize = 15.000
+		Description.TextWrapped = true
+	
+		-- Scripts:
+	
+		local function FGFO_script() -- Notification.LocalScript 
+			local script = Instance.new('LocalScript', Notification)
+	
+			local TweenService = game:GetService("TweenService")
+			local uiFrame = script.Parent
+			local stroke = script.Parent.UIStroke
+	
+			uiFrame.AnchorPoint = Vector2.new(1, 1)
+			uiFrame.Position = UDim2.new(1, 200, 1, -10)
+			uiFrame.BackgroundTransparency = 1
+			stroke.Transparency = 1
+			uiFrame.Visible = true
+	
+			local fadeIn = TweenService:Create(uiFrame, TweenInfo.new(0.3), {BackgroundTransparency = 0})
+			local fadeOut = TweenService:Create(uiFrame, TweenInfo.new(0.3), {BackgroundTransparency = 1})
+	
+			local strokeIn = TweenService:Create(stroke, TweenInfo.new(0.3), {Transparency = 0})
+			local strokeOut = TweenService:Create(stroke, TweenInfo.new(0.3), {Transparency = 1})
+	
+			local slideIn = TweenService:Create(uiFrame, TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+				Position = UDim2.new(1, -10, 1, -10)
+			})
+	
+			local slideOut = TweenService:Create(uiFrame, TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {
+				Position = UDim2.new(1, 200, 1, -10)
+			})
+	
+			fadeIn:Play()
+			strokeIn:Play()
+			slideIn:Play()
+			slideIn.Completed:Wait()
+	
+			wait(2)
+	
+			fadeOut:Play()
+			strokeOut:Play()
+			slideOut:Play()
+	
+		end
+		coroutine.wrap(FGFO_script)()
+	
+		task.wait(1)
+		txt.Text = "Invalid Key"
+		task.wait(1)
+		txt.Text = "Loading Key System"
+		task.wait(2)
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Main%20UI", true))()
+		Hybrid_Loader:Destroy()
+	end
 end
-coroutine.wrap(BEDKGKO_script)()
-local function IDUL_script() -- Open.LocalScript 
-	local script = Instance.new('LocalScript', Open)
+coroutine.wrap(MGJVZTV_script)()
+local function KUUEUW_script() -- Notification.LocalScript 
+	local script = Instance.new('LocalScript', Notification)
 
-	script.Parent.MouseButton1Click:Connect(function() 
-		script.Parent.Parent.Main.Visible = true
-		script.Parent.Visible = false
-	end)
+	local TweenService = game:GetService("TweenService")
+	local uiFrame = script.Parent
+	local stroke = script.Parent.UIStroke
+	
+	uiFrame.AnchorPoint = Vector2.new(1, 1)
+	uiFrame.Position = UDim2.new(1, 200, 1, -10)
+	uiFrame.BackgroundTransparency = 1
+	stroke.Transparency = 1
+	uiFrame.Visible = true
+	
+	local fadeIn = TweenService:Create(uiFrame, TweenInfo.new(0.3), {BackgroundTransparency = 0})
+	local fadeOut = TweenService:Create(uiFrame, TweenInfo.new(0.3), {BackgroundTransparency = 1})
+	
+	local strokeIn = TweenService:Create(stroke, TweenInfo.new(0.3), {Transparency = 0})
+	local strokeOut = TweenService:Create(stroke, TweenInfo.new(0.3), {Transparency = 1})
+	
+	local slideIn = TweenService:Create(uiFrame, TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+		Position = UDim2.new(1, -10, 1, -10)
+	})
+	
+	local slideOut = TweenService:Create(uiFrame, TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {
+		Position = UDim2.new(1, 200, 1, -10)
+	})
+	
+	fadeIn:Play()
+	strokeIn:Play()
+	slideIn:Play()
+	slideIn.Completed:Wait()
+	
+	wait(2)
+	
+	fadeOut:Play()
+	strokeOut:Play()
+	slideOut:Play()
+	
 end
-coroutine.wrap(IDUL_script)()
+coroutine.wrap(KUUEUW_script)()
