@@ -13,7 +13,6 @@ NotificationsFolder.Parent = Notification_Screen
 local NOTIFICATION_WIDTH = 250
 local NOTIFICATION_HEIGHT = 70
 local NOTIFICATION_MARGIN = 8
-local DISPLAY_TIME = 4
 local MAX_NOTIFICATIONS = 4
 
 local activeNotifications = {}
@@ -103,7 +102,8 @@ local function repositionNotifications()
     end
 end
 
-local function showNotification(titleText, descText)
+local function showNotification(titleText, descText, customTime)
+    local duration = tonumber(customTime) or 4
     if #activeNotifications >= MAX_NOTIFICATIONS then
         local oldest = activeNotifications[#activeNotifications]
         if oldest then
@@ -117,11 +117,11 @@ local function showNotification(titleText, descText)
     table.insert(activeNotifications, 1, frame)
     repositionNotifications()
 
-    local progressTween = TweenService:Create(progressBarFill, TweenInfo.new(DISPLAY_TIME, Enum.EasingStyle.Linear), {Size = UDim2.new(0, 0, 1, 0)})
+    local progressTween = TweenService:Create(progressBarFill, TweenInfo.new(duration, Enum.EasingStyle.Linear), {Size = UDim2.new(0, 0, 1, 0)})
     progressTween:Play()
 
     local timer = 0
-    while timer < DISPLAY_TIME do
+    while timer < duration do
         task.wait(0.1)
         timer += 0.1
         if isDismissed() then
