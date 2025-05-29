@@ -17,8 +17,9 @@ local Description = Instance.new("TextLabel")
 --Properties:
 
 Hybrid_Loader.Name = "Hybrid_Loader"
-Hybrid_Loader.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Hybrid_Loader.Parent = coregui
 Hybrid_Loader.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
 
 Main.Name = "Main"
 Main.Parent = Hybrid_Loader
