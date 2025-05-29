@@ -65,15 +65,24 @@ Loading.TextSize = 25.000
 local function MGJVZTV_script() -- Loading.LocalScript 
 	local script = Instance.new('LocalScript', Loading)
 
-	local notificationLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/NotificationLib.lua", true))()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/API/Info.lua",true))()
-
 	local txt = script.Parent
 	local get_key_info_url = "https://keysystem-s10c.onrender.com/keyinfo/"
 	local ipify_url = "https://api.ipify.org?format=json"
 	local has_valid_key = false
-
+	local NotificationLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/main/UI/NotificationLib.lua", true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/main/API/Info.lua", true))()
 	local HttpService = game:GetService("HttpService")
+
+	get_info()
+
+	local key_Info = {
+		key_expiration = _G.key_expiration,
+		ip_address = _G.ip_address,
+		key = _G.Key,
+		time_left = _G.time_left,
+		success = _G.success,
+		blacklisted = _G.blacklisted
+	}
 
 	local function formatText(text)
 		txt.Text = text
@@ -85,36 +94,19 @@ local function MGJVZTV_script() -- Loading.LocalScript
 	formatText("Successfully Connected to Server")
 	formatText("Checking Key")
 
-	local success, ipResponse = pcall(function()
-		return game:HttpGet(ipify_url)
-	end)
-
-	if success then
-		local ipData = HttpService:JSONDecode(ipResponse)
-		local userIP = ipData.ip
-
-		local success2, keyResponse = pcall(function()
-			return game:HttpGet(get_key_info_url .. userIP)
-		end)
-
-		if success2 then
-			local keyData = HttpService:JSONDecode(keyResponse)
-			if keyData.success == true then
-				has_valid_key = true
-			end
-		end
-	end
-
-	if has_valid_key then
-		notificationLib.showNotification("Valid Key", "You have a valid key!")
+	if key_Info.blacklisted == true then
+		NotificationLib.showNotification("You are blacklisted!", "You Have Been Blacklisted!", 3)
+		wait(3)
+		game.Players.LocalPlayer:Kick("Blacklisted!")
+	elseif key_Info.success == true then
+		NotificationLib.showNotification("Key is valid!", _G.time_left, 2)
 		formatText("Valid Key")
 		formatText("Loading Main UI")
 		task.wait(2)
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Main%20UI", true))()
 		Hybrid_Loader:Destroy()
 	else
-		notificationLib.showNotification("Key Invalid", "You do not have a valid key.")
-
+		NotificationLib.showNotification("You do not have a valid key!", "Loading Main UI", 2)
 		task.wait(1)
 		txt.Text = "Invalid Key"
 		task.wait(1)
@@ -123,8 +115,6 @@ local function MGJVZTV_script() -- Loading.LocalScript
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Main%20UI", true))()
 		Hybrid_Loader:Destroy()
 	end
-
-
 end
 coroutine.wrap(MGJVZTV_script)()
 local function KUUEUW_script() -- Notification.LocalScript 
