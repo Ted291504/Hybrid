@@ -1,5 +1,4 @@
--- Monstrum's Gui to Lua
--- Version: 3.2
+-- Monstrum's Gui to Lua\n-- Version: 3.2
 
 -- Instances:
 
@@ -20,6 +19,7 @@ local Description = Instance.new("TextLabel")
 Hybrid_Loader.Name = "Hybrid_Loader"
 Hybrid_Loader.Parent = cloneref(game:GetService("CoreGui"))
 Hybrid_Loader.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
 
 Main.Name = "Main"
 Main.Parent = Hybrid_Loader
@@ -111,89 +111,121 @@ local function MGJVZTV_script() -- Loading.LocalScript
 	local get_key_info_url = "https://keysystem-s10c.onrender.com/keyinfo/"
 	local ipify_url = "https://api.ipify.org?format=json"
 	local has_valid_key = false
-	
+
 	local HttpService = game:GetService("HttpService")
-	
+
 	local function formatText(text)
 		txt.Text = text
 		task.wait(1)
 	end
-	
+
 	formatText("Checking Connection")
 	formatText("Connecting to Server")
 	formatText("Successfully Connected to Server")
 	formatText("Checking Key")
-	
+
 	local success, ipResponse = pcall(function()
-		return HttpService:GetAsync(ipify_url)
+		return game:HttpGet(ipify_url)
 	end)
-	
+
 	if success then
-		print("IP Response: "..ipResponse)
 		local ipData = HttpService:JSONDecode(ipResponse)
 		local userIP = ipData.ip
-		print("User IP: "..userIP)
-	
+
 		local success2, keyResponse = pcall(function()
-			return HttpService:GetAsync(get_key_info_url .. userIP)
+			return game:HttpGet(get_key_info_url .. userIP)
 		end)
-	
+
 		if success2 then
-			print("Key Response: "..keyResponse)
 			local keyData = HttpService:JSONDecode(keyResponse)
-			print("Key Data:", keyData)
-			if keyData.success == true or tostring(keyData.success) == "true" then
+			if keyData.success == true then
 				has_valid_key = true
 			end
-		else
-			warn("Failed to get key info")
 		end
-	else
-		warn("Failed to get IP")
 	end
-	
-	if has_valid_key == true then
+
+	if has_valid_key then
 		formatText("Valid Key")
 		formatText("Loading Main UI")
 		task.wait(2)
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Main%20UI", true))()
 		Hybrid_Loader:Destroy()
 	else
-		Notification.Visible = true
+		local Notification = Instance.new("Frame")
+		local UICorner = Instance.new("UICorner")
+		local UIStroke = Instance.new("UIStroke")
+		local Title = Instance.new("TextLabel")
+		local Description = Instance.new("TextLabel")
+
+		Notification.Name = "Notification"
+		Notification.Parent = game.StarterGui.Hybrid_Loader
+		Notification.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
+		Notification.BorderSizePixel = 0
+		Notification.Position = UDim2.new(0.75, 0, 0.82, 0)
+		Notification.Size = UDim2.new(0, 155, 0, 55)
+
+		UICorner.Parent = Notification
+		UIStroke.Parent = Notification
+		UIStroke.Color = Color3.fromRGB(35, 35, 35)
+
+		Title.Name = "Title"
+		Title.Parent = Notification
+		Title.BackgroundTransparency = 1
+		Title.Position = UDim2.new(0.18, 0, -0.13, 0)
+		Title.Size = UDim2.new(0, 100, 0, 38)
+		Title.Font = Enum.Font.SourceSans
+		Title.Text = "Invalid Key!"
+		Title.TextColor3 = Color3.fromRGB(54, 54, 54)
+		Title.TextSize = 20
+		Title.TextWrapped = true
+
+		Description.Name = "Description"
+		Description.Parent = Notification
+		Description.BackgroundTransparency = 1
+		Description.Position = UDim2.new(-0.06, 0, 0.31, 0)
+		Description.Size = UDim2.new(0, 173, 0, 38)
+		Description.Font = Enum.Font.SourceSans
+		Description.Text = "Your key is invalid!"
+		Description.TextColor3 = Color3.fromRGB(54, 54, 54)
+		Description.TextSize = 15
+		Description.TextWrapped = true
 
 		local TweenService = game:GetService("TweenService")
-		local uiFrame = Notification
-		local stroke = Notification.UIStroke
 
-		uiFrame.AnchorPoint = Vector2.new(1, 1)
-		uiFrame.Position = UDim2.new(1, 200, 1, -10)
-		uiFrame.BackgroundTransparency = 1
-		stroke.Transparency = 1
+		local function showNotification(frame)
+			local stroke = frame.UIStroke
+			frame.AnchorPoint = Vector2.new(1, 1)
+			frame.Position = UDim2.new(1, 200, 1, -10)
+			frame.BackgroundTransparency = 1
+			stroke.Transparency = 1
+			frame.Visible = true
 
-		local fadeIn = TweenService:Create(uiFrame, TweenInfo.new(0.3), {BackgroundTransparency = 0})
-		local fadeOut = TweenService:Create(uiFrame, TweenInfo.new(0.3), {BackgroundTransparency = 1})
+			local fadeIn = TweenService:Create(frame, TweenInfo.new(0.3), {BackgroundTransparency = 0})
+			local strokeIn = TweenService:Create(stroke, TweenInfo.new(0.3), {Transparency = 0})
+			local slideIn = TweenService:Create(frame, TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+				Position = UDim2.new(1, -10, 1, -10)
+			})
+			fadeIn:Play()
+			strokeIn:Play()
+			slideIn:Play()
+			slideIn.Completed:Wait()
 
-		local strokeIn = TweenService:Create(stroke, TweenInfo.new(0.3), {Transparency = 0})
-		local strokeOut = TweenService:Create(stroke, TweenInfo.new(0.3), {Transparency = 1})
+			task.wait(2)
 
-		local slideIn = TweenService:Create(uiFrame, TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-			Position = UDim2.new(1, -10, 1, -10)
-		})
+			local fadeOut = TweenService:Create(frame, TweenInfo.new(0.3), {BackgroundTransparency = 1})
+			local strokeOut = TweenService:Create(stroke, TweenInfo.new(0.3), {Transparency = 1})
+			local slideOut = TweenService:Create(frame, TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {
+				Position = UDim2.new(1, 200, 1, -10)
+			})
+			fadeOut:Play()
+			strokeOut:Play()
+			slideOut:Play()
+			slideOut.Completed:Wait()
+		end
 
-		local slideOut = TweenService:Create(uiFrame, TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {
-			Position = UDim2.new(1, 200, 1, -10)
-		})
-
-		fadeIn:Play()
-		strokeIn:Play()
-		slideIn:Play()
-		slideIn.Completed:Wait()
-
-		wait(2)
-
-		fadeOut:Play()
-		strokeOut:Play()
-		slideOut:Play()
+		coroutine.wrap(function()
+			showNotification(Notification)
+		end)()
 
 		task.wait(1)
 		txt.Text = "Invalid Key"
@@ -203,5 +235,46 @@ local function MGJVZTV_script() -- Loading.LocalScript
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Main%20UI", true))()
 		Hybrid_Loader:Destroy()
 	end
+
 end
 coroutine.wrap(MGJVZTV_script)()
+local function KUUEUW_script() -- Notification.LocalScript 
+	local script = Instance.new('LocalScript', Notification)
+
+	local TweenService = game:GetService("TweenService")
+	local uiFrame = script.Parent
+	local stroke = script.Parent.UIStroke
+	
+	uiFrame.AnchorPoint = Vector2.new(1, 1)
+	uiFrame.Position = UDim2.new(1, 200, 1, -10)
+	uiFrame.BackgroundTransparency = 1
+	stroke.Transparency = 1
+	uiFrame.Visible = true
+	
+	local fadeIn = TweenService:Create(uiFrame, TweenInfo.new(0.3), {BackgroundTransparency = 0})
+	local fadeOut = TweenService:Create(uiFrame, TweenInfo.new(0.3), {BackgroundTransparency = 1})
+	
+	local strokeIn = TweenService:Create(stroke, TweenInfo.new(0.3), {Transparency = 0})
+	local strokeOut = TweenService:Create(stroke, TweenInfo.new(0.3), {Transparency = 1})
+	
+	local slideIn = TweenService:Create(uiFrame, TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+		Position = UDim2.new(1, -10, 1, -10)
+	})
+	
+	local slideOut = TweenService:Create(uiFrame, TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {
+		Position = UDim2.new(1, 200, 1, -10)
+	})
+	
+	fadeIn:Play()
+	strokeIn:Play()
+	slideIn:Play()
+	slideIn.Completed:Wait()
+	
+	wait(2)
+	
+	fadeOut:Play()
+	strokeOut:Play()
+	slideOut:Play()
+	
+end
+coroutine.wrap(KUUEUW_script)()
