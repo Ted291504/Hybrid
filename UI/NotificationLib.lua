@@ -1,89 +1,143 @@
+local TweenService = game:GetService("TweenService")
+local CoreGui = game:GetService("CoreGui")
+
 local Notification_Screen = Instance.new("ScreenGui")
 Notification_Screen.Name = "Hybrid_Notification"
-Notification_Screen.Parent = cloneref(game:GetService("CoreGui"))
+Notification_Screen.Parent = cloneref(CoreGui)
 Notification_Screen.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-local Notification = Instance.new("Frame")
-Notification.Name = "Notification"
-Notification.Parent = Notification_Screen
-Notification.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
-Notification.BorderSizePixel = 0
-Notification.Position = UDim2.new(0.75, 0, 0.82, 0)
-Notification.Size = UDim2.new(0, 155, 0, 55)
-Notification.Visible = false
+local NotificationsFolder = Instance.new("Folder")
+NotificationsFolder.Name = "NotificationsFolder"
+NotificationsFolder.Parent = Notification_Screen
 
-local UICorner = Instance.new("UICorner")
-UICorner.Parent = Notification
+local NOTIFICATION_WIDTH = 250
+local NOTIFICATION_HEIGHT = 70
+local NOTIFICATION_MARGIN = 8
+local DISPLAY_TIME = 4
 
-local UIStroke = Instance.new("UIStroke")
-UIStroke.Parent = Notification
-UIStroke.Color = Color3.fromRGB(35, 35, 35)
+local function createNotification(titleText, descText)
+    local frame = Instance.new("Frame")
+    frame.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+    frame.BorderSizePixel = 0
+    frame.Size = UDim2.new(0, NOTIFICATION_WIDTH, 0, NOTIFICATION_HEIGHT)
+    frame.AnchorPoint = Vector2.new(1, 1)
+    frame.Position = UDim2.new(1, -10, 1, -10)
+    frame.Parent = NotificationsFolder
+    frame.ClipsDescendants = true
+    frame.BackgroundTransparency = 1
 
-local Title = Instance.new("TextLabel")
-Title.Name = "Title"
-Title.Parent = Notification
-Title.BackgroundTransparency = 1
-Title.Position = UDim2.new(0, 8, 0, 2)
-Title.Size = UDim2.new(1, -16, 0, 20)
-Title.Font = Enum.Font.SourceSansSemibold
-Title.Text = "Invalid Key!"
-Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-Title.TextSize = 18
-Title.TextWrapped = true
-Title.TextXAlignment = Enum.TextXAlignment.Left
+    local uicorner = Instance.new("UICorner", frame)
+    uicorner.CornerRadius = UDim.new(0, 8)
 
-local Description = Instance.new("TextLabel")
-Description.Name = "Description"
-Description.Parent = Notification
-Description.BackgroundTransparency = 1
-Description.Position = UDim2.new(0, 8, 0, 25)
-Description.Size = UDim2.new(1, -16, 0, 20)
-Description.Font = Enum.Font.SourceSans
-Description.Text = "Your key is invalid!"
-Description.TextColor3 = Color3.fromRGB(200, 200, 200)
-Description.TextSize = 14
-Description.TextWrapped = true
-Description.TextXAlignment = Enum.TextXAlignment.Left
+    local uistroke = Instance.new("UIStroke", frame)
+    uistroke.Color = Color3.fromRGB(40, 40, 40)
+    uistroke.Transparency = 1
 
-local TweenService = game:GetService("TweenService")
+    local title = Instance.new("TextLabel", frame)
+    title.BackgroundTransparency = 1
+    title.Position = UDim2.new(0, 12, 0, 8)
+    title.Size = UDim2.new(1, -24, 0, 22)
+    title.Font = Enum.Font.SourceSansSemibold
+    title.Text = titleText or "Notification"
+    title.TextColor3 = Color3.fromRGB(230, 230, 230)
+    title.TextSize = 18
+    title.TextXAlignment = Enum.TextXAlignment.Left
+    title.TextTruncate = Enum.TextTruncate.AtEnd
 
-function showNotification(titleText, descText)
-	local frame = Notification
-	local title = frame:FindFirstChild("Title")
-	local desc = frame:FindFirstChild("Description")
-	local stroke = frame:FindFirstChild("UIStroke")
+    local desc = Instance.new("TextLabel", frame)
+    desc.BackgroundTransparency = 1
+    desc.Position = UDim2.new(0, 12, 0, 30)
+    desc.Size = UDim2.new(1, -24, 0, 30)
+    desc.Font = Enum.Font.SourceSans
+    desc.Text = descText or ""
+    desc.TextColor3 = Color3.fromRGB(160, 160, 160)
+    desc.TextSize = 14
+    desc.TextXAlignment = Enum.TextXAlignment.Left
+    desc.TextWrapped = true
 
-	if title then title.Text = titleText or "Notification" end
-	if desc then desc.Text = descText or "" end
+    local progressBar = Instance.new("Frame", frame)
+    progressBar.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+    progressBar.BorderSizePixel = 0
+    progressBar.Size = UDim2.new(1, 0, 0, 4)
+    progressBar.Position = UDim2.new(0, 0, 1, -4)
 
-	frame.AnchorPoint = Vector2.new(1, 1)
-	frame.Position = UDim2.new(1, 200, 1, -20)
-	frame.BackgroundTransparency = 1
-	if stroke then stroke.Transparency = 1 end
-	frame.Visible = true
+    local progressBarFill = Instance.new("Frame", progressBar)
+    progressBarFill.BackgroundColor3 = Color3.fromRGB(180, 180, 180)
+    progressBarFill.BorderSizePixel = 0
+    progressBarFill.Size = UDim2.new(1, 0, 1, 0)
 
-	local fadeIn = TweenService:Create(frame, TweenInfo.new(0.4, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {
-		Position = UDim2.new(1, -10, 1, -20),
-		BackgroundTransparency = 0
-	})
-	local strokeIn = stroke and TweenService:Create(stroke, TweenInfo.new(0.4), {Transparency = 0})
-	fadeIn:Play()
-	if strokeIn then strokeIn:Play() end
+    local fadeInTween = TweenService:Create(frame, TweenInfo.new(0.4, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {
+        BackgroundTransparency = 0
+    })
+    local strokeInTween = TweenService:Create(uistroke, TweenInfo.new(0.4), {Transparency = 0})
+    fadeInTween:Play()
+    strokeInTween:Play()
 
-	task.wait(2.5)
+    local dismissed = false
+    frame.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            dismissed = true
+        end
+    end)
 
-	local fadeOut = TweenService:Create(frame, TweenInfo.new(0.4, Enum.EasingStyle.Sine, Enum.EasingDirection.In), {
-		Position = UDim2.new(1, 200, 1, -20),
-		BackgroundTransparency = 1
-	})
-	local strokeOut = stroke and TweenService:Create(stroke, TweenInfo.new(0.4), {Transparency = 1})
-	fadeOut:Play()
-	if strokeOut then strokeOut:Play() end
+    return frame, progressBarFill, function()
+        dismissed = true
+    end, function()
+        return dismissed
+    end
+end
 
-	task.wait(0.4)
-	frame.Visible = false
+local activeNotifications = {}
+
+local function repositionNotifications()
+    for i, notif in ipairs(activeNotifications) do
+        local goalPos = UDim2.new(1, -10, 1, -10 - ((NOTIFICATION_HEIGHT + NOTIFICATION_MARGIN) * (i - 1)))
+        TweenService:Create(notif, TweenInfo.new(0.3, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {Position = goalPos}):Play()
+    end
+end
+
+local function showNotification(titleText, descText)
+    local frame, progressBarFill, dismissFunc, isDismissed = createNotification(titleText, descText)
+
+    table.insert(activeNotifications, 1, frame)
+    repositionNotifications()
+
+    local progressTween = TweenService:Create(progressBarFill, TweenInfo.new(DISPLAY_TIME, Enum.EasingStyle.Linear), {Size = UDim2.new(0, 0, 1, 0)})
+    progressTween:Play()
+
+    local timer = 0
+    while timer < DISPLAY_TIME do
+        task.wait(0.1)
+        timer += 0.1
+        if isDismissed() then
+            break
+        end
+    end
+
+    local fadeOutTween = TweenService:Create(frame, TweenInfo.new(0.4, Enum.EasingStyle.Sine, Enum.EasingDirection.In), {
+        BackgroundTransparency = 1,
+        Position = frame.Position + UDim2.new(0, 200, 0, 0)
+    })
+    local stroke = frame:FindFirstChildWhichIsA("UIStroke")
+    if stroke then
+        TweenService:Create(stroke, TweenInfo.new(0.4), {Transparency = 1}):Play()
+    end
+
+    progressTween:Cancel()
+    fadeOutTween:Play()
+    fadeOutTween.Completed:Wait()
+
+    frame:Destroy()
+
+    for i, v in ipairs(activeNotifications) do
+        if v == frame then
+            table.remove(activeNotifications, i)
+            break
+        end
+    end
+    repositionNotifications()
 end
 
 return {
-	showNotification = showNotification
+    showNotification = showNotification
 }
