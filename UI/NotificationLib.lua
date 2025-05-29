@@ -1,7 +1,6 @@
 local HttpService = game:GetService("HttpService")
 local TweenService = game:GetService("TweenService")
 
-local notificationUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/main/UI/Notification.lua", true))()
 local function showNotification(titleText, descText)
 	local frame = notificationUI
 	local title = frame:FindFirstChild("Title")
