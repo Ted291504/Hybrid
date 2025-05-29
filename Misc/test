@@ -17,7 +17,7 @@ local Description = Instance.new("TextLabel")
 --Properties:
 
 Hybrid_Loader.Name = "Hybrid_Loader"
-Hybrid_Loader.Parent = coregui
+Hybrid_Loader.Parent = cloneref(game:GetService("CoreGui"))
 Hybrid_Loader.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 
