@@ -1,74 +1,136 @@
+local txt = script.Parent
 local HttpService = game:GetService("HttpService")
-local Players = game:GetService("Players")
-local player = Players.LocalPlayer
+local is_authed = false
 
--- UI Setup
-local gui = Instance.new("ScreenGui", player:WaitForChild("PlayerGui"))
-gui.Name = "KeyTimerUI"
+task.wait(1)
+txt.Text = "Checking Connection"
+task.wait(1)
+txt.Text = "Connecting to Server"
+task.wait(1)
+txt.Text = "Successfully Connected to Server"
+task.wait(1)
+txt.Text = "Checking Key"
 
-local frame = Instance.new("Frame", gui)
-frame.Size = UDim2.new(0, 300, 0, 120)
-frame.Position = UDim2.new(0.5, -150, 0.5, -60)
-frame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-frame.BorderSizePixel = 0
+local function checkIP()
+	local ipSuccess, ip = pcall(function()
+		return game:HttpGet("https://api.ipify.org")
+	end)
 
-local title = Instance.new("TextLabel", frame)
-title.Size = UDim2.new(1, 0, 0, 30)
-title.BackgroundTransparency = 1
-title.Text = "Key Time Remaining"
-title.TextColor3 = Color3.fromRGB(255, 255, 255)
-title.Font = Enum.Font.GothamBold
-title.TextSize = 18
+	if not ipSuccess or not ip or ip == "" then
+		txt.Text = "Failed to get Key. Please contact owner!"
+		return false
+	end
 
-local timeLabel = Instance.new("TextLabel", frame)
-timeLabel.Position = UDim2.new(0, 0, 0, 40)
-timeLabel.Size = UDim2.new(1, 0, 0, 60)
-timeLabel.BackgroundTransparency = 1
-timeLabel.TextColor3 = Color3.new(1, 1, 1)
-timeLabel.Font = Enum.Font.Gotham
-timeLabel.TextSize = 22
-timeLabel.Text = "Checking..."
+	local url = "https://keysystem-s10c.onrender.com/keyinfo/" .. HttpService:UrlEncode(ip)
+	local success, response = pcall(function()
+		return game:HttpGet(url)
+	end)
 
-local function formatTime(seconds)
-	local days = math.floor(seconds / 86400)
-	local hours = math.floor((seconds % 86400) / 3600)
-	local minutes = math.floor((seconds % 3600) / 60)
-	return string.format("%dD %dH %dM", days, hours, minutes)
-end
-
-local function getKeyInfo(input)
-	local url = "https://keysystem-s10c.onrender.com/getKeyInfo?" .. (input:match("^%d+%.%d+%.%d+%.%d+$") and "ip=" or "key=") .. input
-	local response = request({
-		Url = url,
-		Method = "GET"
-	})
-
-	if response.Success then
-		local data = HttpService:JSONDecode(response.Body)
-		if data.expiration then
-			local cleanDate = data.expiration:match("^(.-)%.") or data.expiration
-			cleanDate = cleanDate:match("^%s*(.-)%s*$")
-			if not cleanDate:find("Z$") then
-				cleanDate ..= "Z"
-			end
-
-			local success, expTime = pcall(function()
-				return DateTime.fromIso8601(cleanDate):ToUnixTimestamp()
-			end)
-
-			if success then
-				local now = os.time()
-				local secondsLeft = math.max(expTime - now, 0)
-				timeLabel.Text = formatTime(secondsLeft)
-			else
-				timeLabel.Text = "Invalid expiration format."
-			end
+	if success and response then
+		local data = HttpService:JSONDecode(response)
+		if data.has_key == true then
+			txt.Text = "Key is authorized!"
+			return true
 		else
-			timeLabel.Text = "Invalid key."
+			txt.Text = "Key not authorized."
 		end
 	else
-		timeLabel.Text = "API request failed."
+		txt.Text = "Failed to check key."
 	end
+
+	return false
 end
 
-getKeyInfo("1cdb8cf6c853766ab9c8276162a4682f")
+-- Wait until key check is done
+if checkIP() then
+	task.wait(1)
+	txt.Text = "Valid Key"
+	task.wait(1)
+	txt.Text = "Loading Main UI"
+	task.wait(2)
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Main%20UI", true))()
+	Hybrid_Loader:Destroy()
+else
+	local Notification = Instance.new("Frame")
+	local UICorner = Instance.new("UICorner")
+	local UIStroke = Instance.new("UIStroke")
+	local Title = Instance.new("TextLabel")
+	local Description = Instance.new("TextLabel")
+
+	Notification.Name = "Notification"
+	Notification.Parent = game.StarterGui.Hybrid_Loader
+	Notification.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
+	Notification.Position = UDim2.new(0.754, 0, 0.822, 0)
+	Notification.Size = UDim2.new(0, 155, 0, 55)
+
+	UICorner.Parent = Notification
+	UIStroke.Parent = Notification
+	UIStroke.Color = Color3.fromRGB(35, 35, 35)
+
+	Title.Name = "Title"
+	Title.Parent = Notification
+	Title.BackgroundTransparency = 1
+	Title.Position = UDim2.new(0.176, 0, -0.13, 0)
+	Title.Size = UDim2.new(0, 100, 0, 38)
+	Title.Font = Enum.Font.SourceSans
+	Title.Text = "Invalid Key!"
+	Title.TextColor3 = Color3.fromRGB(54, 54, 54)
+	Title.TextSize = 20
+	Title.TextWrapped = true
+
+	Description.Name = "Description"
+	Description.Parent = Notification
+	Description.BackgroundTransparency = 1
+	Description.Position = UDim2.new(-0.058, 0, 0.307, 0)
+	Description.Size = UDim2.new(0, 173, 0, 38)
+	Description.Font = Enum.Font.SourceSans
+	Description.Text = "Your key is invalid!"
+	Description.TextColor3 = Color3.fromRGB(54, 54, 54)
+	Description.TextSize = 15
+	Description.TextWrapped = true
+
+	local TweenService = game:GetService("TweenService")
+
+	local function showNotification(frame)
+		local stroke = frame.UIStroke
+		frame.AnchorPoint = Vector2.new(1, 1)
+		frame.Position = UDim2.new(1, 200, 1, -10)
+		frame.BackgroundTransparency = 1
+		stroke.Transparency = 1
+		frame.Visible = true
+
+		local fadeIn = TweenService:Create(frame, TweenInfo.new(0.3), {BackgroundTransparency = 0})
+		local fadeOut = TweenService:Create(frame, TweenInfo.new(0.3), {BackgroundTransparency = 1})
+		local strokeIn = TweenService:Create(stroke, TweenInfo.new(0.3), {Transparency = 0})
+		local strokeOut = TweenService:Create(stroke, TweenInfo.new(0.3), {Transparency = 1})
+		local slideIn = TweenService:Create(frame, TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+			Position = UDim2.new(1, -10, 1, -10)
+		})
+		local slideOut = TweenService:Create(frame, TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {
+			Position = UDim2.new(1, 200, 1, -10)
+		})
+
+		fadeIn:Play()
+		strokeIn:Play()
+		slideIn:Play()
+		slideIn.Completed:Wait()
+
+		task.wait(2)
+
+		fadeOut:Play()
+		strokeOut:Play()
+		slideOut:Play()
+	end
+
+	coroutine.wrap(function()
+		showNotification(Notification)
+	end)()
+
+	task.wait(1)
+	txt.Text = "Invalid Key"
+	task.wait(1)
+	txt.Text = "Loading Key System"
+	task.wait(2)
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Main%20UI", true))()
+	Hybrid_Loader:Destroy()
+end
