@@ -47,10 +47,10 @@ function get_info()
     end
 
     if data.success then
-        _G.key_expiration = data.expiration or ""
-        _G.ip_address = data.ip_address or ""
-        _G.Key = data.key or ""
-        _G.time_left = data.time_left or ""
+        _G.key_expiration = data.expiration
+        _G.ip_address = data.ip_address
+        _G.Key = data.key
+        _G.time_left = data.time_left
         _G.success = true
         return true
     else
