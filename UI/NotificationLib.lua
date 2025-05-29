@@ -83,3 +83,7 @@ function showNotification(titleText, descText)
 	task.wait(0.4)
 	frame.Visible = false
 end
+
+return {
+	showNotification = showNotification
+}
