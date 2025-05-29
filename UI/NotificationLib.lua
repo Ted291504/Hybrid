@@ -14,6 +14,9 @@ local NOTIFICATION_WIDTH = 250
 local NOTIFICATION_HEIGHT = 70
 local NOTIFICATION_MARGIN = 8
 local DISPLAY_TIME = 4
+local MAX_NOTIFICATIONS = 4
+
+local activeNotifications = {}
 
 local function createNotification(titleText, descText)
     local frame = Instance.new("Frame")
@@ -58,8 +61,8 @@ local function createNotification(titleText, descText)
     local progressBar = Instance.new("Frame", frame)
     progressBar.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
     progressBar.BorderSizePixel = 0
-    progressBar.Size = UDim2.new(1, -24, 0, 6) -- fit width minus padding
-    progressBar.Position = UDim2.new(0, 12, 1, -10) -- aligned inside with padding
+    progressBar.Size = UDim2.new(1, -24, 0, 6)
+    progressBar.Position = UDim2.new(0, 12, 1, -10)
 
     local progressCorner = Instance.new("UICorner", progressBar)
     progressCorner.CornerRadius = UDim.new(0, 3)
@@ -93,8 +96,6 @@ local function createNotification(titleText, descText)
     end
 end
 
-local activeNotifications = {}
-
 local function repositionNotifications()
     for i, notif in ipairs(activeNotifications) do
         local goalPos = UDim2.new(1, -10, 1, -10 - ((NOTIFICATION_HEIGHT + NOTIFICATION_MARGIN) * (i - 1)))
@@ -103,6 +104,14 @@ local function repositionNotifications()
 end
 
 local function showNotification(titleText, descText)
+    if #activeNotifications >= MAX_NOTIFICATIONS then
+        local oldest = activeNotifications[#activeNotifications]
+        if oldest then
+            oldest:Destroy()
+            table.remove(activeNotifications, #activeNotifications)
+        end
+    end
+
     local frame, progressBarFill, dismissFunc, isDismissed = createNotification(titleText, descText)
 
     table.insert(activeNotifications, 1, frame)
@@ -133,14 +142,14 @@ local function showNotification(titleText, descText)
     fadeOutTween:Play()
     fadeOutTween.Completed:Wait()
 
-    frame:Destroy()
-
     for i, v in ipairs(activeNotifications) do
         if v == frame then
             table.remove(activeNotifications, i)
             break
         end
     end
+
+    frame:Destroy()
     repositionNotifications()
 end
 
