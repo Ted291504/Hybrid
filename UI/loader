@@ -60,48 +60,6 @@ Loading.Text = "Loading"
 Loading.TextColor3 = Color3.fromRGB(54, 54, 54)
 Loading.TextSize = 25.000
 
-Notification.Name = "Notification"
-Notification.Parent = Hybrid_Loader
-Notification.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
-Notification.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Notification.BorderSizePixel = 0
-Notification.Position = UDim2.new(0.754433811, 0, 0.82206881, 0)
-Notification.Size = UDim2.new(0, 155, 0, 55)
-Notification.Visible = false
-
-UICorner_2.Parent = Notification
-
-UIStroke_2.Parent = Notification
-UIStroke_2.Color = Color3.fromRGB(35, 35, 35)
-
-Title.Name = "Title"
-Title.Parent = Notification
-Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Title.BackgroundTransparency = 1.000
-Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Title.BorderSizePixel = 0
-Title.Position = UDim2.new(0.175834402, 0, -0.130082011, 0)
-Title.Size = UDim2.new(0, 100, 0, 38)
-Title.Font = Enum.Font.SourceSans
-Title.Text = "Invalid Key!"
-Title.TextColor3 = Color3.fromRGB(54, 54, 54)
-Title.TextSize = 20.000
-Title.TextWrapped = true
-
-Description.Name = "Description"
-Description.Parent = Notification
-Description.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Description.BackgroundTransparency = 1.000
-Description.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Description.BorderSizePixel = 0
-Description.Position = UDim2.new(-0.0580645166, 0, 0.307366937, 0)
-Description.Size = UDim2.new(0, 173, 0, 38)
-Description.Font = Enum.Font.SourceSans
-Description.Text = "Your key is invalid!"
-Description.TextColor3 = Color3.fromRGB(54, 54, 54)
-Description.TextSize = 15.000
-Description.TextWrapped = true
-
 -- Scripts:
 
 local function MGJVZTV_script() -- Loading.LocalScript 
