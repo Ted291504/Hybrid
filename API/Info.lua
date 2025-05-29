@@ -9,6 +9,7 @@ _G.time_left = ""
 _G.success = false
 _G.blacklisted = false
 _G.NoInfoFound = false
+_G.system_online = false
 
 function get_info()
 	local ipSuccess, ip = pcall(function()
@@ -30,8 +31,7 @@ function get_info()
 		return false
 	end
 
-	local data
-	local decodeSuccess, decodeResult = pcall(function()
+	local decodeSuccess, data = pcall(function()
 		return HttpService:JSONDecode(response)
 	end)
 
@@ -40,7 +40,14 @@ function get_info()
 		return false
 	end
 
-	data = decodeResult
+	if data.message == "Key system is offline" then
+		warn("Key system is offline!")
+		_G.system_online = false
+		_G.success = false
+		return false
+	else
+		_G.system_online = true
+	end
 
 	if data.blacklisted then
 		_G.blacklisted = true
