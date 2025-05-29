@@ -17,7 +17,7 @@ local Description = Instance.new("TextLabel")
 --Properties:
 
 Hybrid_Loader.Name = "Hybrid_Loader"
-Hybrid_Loader.Parent = cloneref(game:GetService("CoreGui"))
+Hybrid_Loader.Parent = coregui
 Hybrid_Loader.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 
@@ -164,7 +164,7 @@ local function MGJVZTV_script() -- Loading.LocalScript
 		--Properties:
 	
 		Notification.Name = "Notification"
-		Notification.Parent = game.StarterGui.Hybrid_Loader
+		Notification.Parent = Hybrid_Loader
 		Notification.BackgroundColor3 = Color3.fromRGB(8, 8, 8)
 		Notification.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		Notification.BorderSizePixel = 0
