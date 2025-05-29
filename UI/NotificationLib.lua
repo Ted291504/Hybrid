@@ -58,13 +58,19 @@ local function createNotification(titleText, descText)
     local progressBar = Instance.new("Frame", frame)
     progressBar.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
     progressBar.BorderSizePixel = 0
-    progressBar.Size = UDim2.new(1, 0, 0, 4)
-    progressBar.Position = UDim2.new(0, 0, 1, -4)
+    progressBar.Size = UDim2.new(1, 0, 0, 6)
+    progressBar.Position = UDim2.new(0, 0, 1, -6)
+
+    local progressCorner = Instance.new("UICorner", progressBar)
+    progressCorner.CornerRadius = UDim.new(0, 3)
 
     local progressBarFill = Instance.new("Frame", progressBar)
-    progressBarFill.BackgroundColor3 = Color3.fromRGB(180, 180, 180)
+    progressBarFill.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
     progressBarFill.BorderSizePixel = 0
     progressBarFill.Size = UDim2.new(1, 0, 1, 0)
+
+    local progressFillCorner = Instance.new("UICorner", progressBarFill)
+    progressFillCorner.CornerRadius = UDim.new(0, 3)
 
     local fadeInTween = TweenService:Create(frame, TweenInfo.new(0.4, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {
         BackgroundTransparency = 0
