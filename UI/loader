@@ -81,7 +81,8 @@ local function MGJVZTV_script() -- Loading.LocalScript
 		key = _G.Key,
 		time_left = _G.time_left,
 		success = _G.success,
-		blacklisted = _G.blacklisted
+		blacklisted = _G.blacklisted,
+		key_system_online = _G.system_online
 	}
 
 	local function formatText(text)
@@ -94,7 +95,12 @@ local function MGJVZTV_script() -- Loading.LocalScript
 	formatText("Successfully Connected to Server")
 	formatText("Checking Key")
 
-	if key_Info.blacklisted == true then
+
+
+	if key_Info.key_system_online == false then
+		NotificationLib.showNotification("Key System is Offline!", "The Key System has been disabled!", 5)
+    	NotificationLib.showNotification("Loading Key System...", "Please Wait...", 3)
+	elseif key_Info.blacklisted == true then
 		NotificationLib.showNotification("You are blacklisted!", "You Have Been Blacklisted!", 3)
 		wait(3)
 		game.Players.LocalPlayer:Kick("Blacklisted!")
