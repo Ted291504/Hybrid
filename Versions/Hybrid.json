@@ -1,4 +1,4 @@
 {
   "ui": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/loader\"))()",
-  "version": "2.669.664"
+  "version": "2.677.1763"
 }
