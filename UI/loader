@@ -8,18 +8,12 @@ local UICorner = Instance.new("UICorner")
 local UIStroke = Instance.new("UIStroke")
 local Welcome = Instance.new("TextLabel")
 local Loading = Instance.new("TextLabel")
-local Notification = Instance.new("Frame")
-local UICorner_2 = Instance.new("UICorner")
-local UIStroke_2 = Instance.new("UIStroke")
-local Title = Instance.new("TextLabel")
-local Description = Instance.new("TextLabel")
 
 --Properties:
 
 Hybrid_Loader.Name = "Hybrid_Loader"
-Hybrid_Loader.Parent = cloneref(game:GetService("CoreGui"))
+Hybrid_Loader.Parent = gethui()
 Hybrid_Loader.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
 
 Main.Name = "Main"
 Main.Parent = Hybrid_Loader
@@ -62,7 +56,7 @@ Loading.TextSize = 25.000
 
 -- Scripts:
 
-local function MGJVZTV_script() -- Loading.LocalScript 
+local function FHKK_script() -- Loading.LocalScript 
 	local script = Instance.new('LocalScript', Loading)
 
 	local txt = script.Parent
@@ -72,35 +66,29 @@ local function MGJVZTV_script() -- Loading.LocalScript
 	local NotificationLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/main/UI/NotificationLib.lua", true))()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/main/API/Info.lua", true))()
 	local HttpService = game:GetService("HttpService")
-
+	
 	get_info()
-
+	
 	local key_Info = {
 		key_expiration = _G.key_expiration,
 		ip_address = _G.ip_address,
 		key = _G.Key,
 		time_left = _G.time_left,
 		success = _G.success,
-		blacklisted = _G.blacklisted,
-		key_system_online = _G.system_online
+		blacklisted = _G.blacklisted
 	}
-
+	
 	local function formatText(text)
 		txt.Text = text
 		task.wait(1)
 	end
-
+	
 	formatText("Checking Connection")
 	formatText("Connecting to Server")
 	formatText("Successfully Connected to Server")
 	formatText("Checking Key")
-
-
-
-	if key_Info.key_system_online == false then
-		NotificationLib.showNotification("Key System is Offline!", "The Key System has been disabled!", 5)
-    		NotificationLib.showNotification("Loading Main UI...", "Please Wait...", 3)
-	elseif key_Info.blacklisted == true then
+	
+	if key_Info.blacklisted == true then
 		NotificationLib.showNotification("You are blacklisted!", "You Have Been Blacklisted!", 3)
 		wait(3)
 		game.Players.LocalPlayer:Kick("Blacklisted!")
@@ -109,8 +97,8 @@ local function MGJVZTV_script() -- Loading.LocalScript
 		formatText("Valid Key")
 		formatText("Loading Main UI")
 		task.wait(2)
-		Hybrid_Loader:Destroy()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Main%20UI", true))()
+		script.Parent.Parent.Parent:Destroy()
 	else
 		NotificationLib.showNotification("You do not have a valid key!", "Loading Main UI", 2)
 		task.wait(1)
@@ -118,48 +106,8 @@ local function MGJVZTV_script() -- Loading.LocalScript
 		task.wait(1)
 		txt.Text = "Loading Key System"
 		task.wait(2)
-		Hybrid_Loader:Destroy()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Main%20UI", true))()
+		Hybrid_Loader:Destroy()
 	end
 end
-coroutine.wrap(MGJVZTV_script)()
-local function KUUEUW_script() -- Notification.LocalScript 
-	local script = Instance.new('LocalScript', Notification)
-
-	local TweenService = game:GetService("TweenService")
-	local uiFrame = script.Parent
-	local stroke = script.Parent.UIStroke
-	
-	uiFrame.AnchorPoint = Vector2.new(1, 1)
-	uiFrame.Position = UDim2.new(1, 200, 1, -10)
-	uiFrame.BackgroundTransparency = 1
-	stroke.Transparency = 1
-	uiFrame.Visible = true
-	
-	local fadeIn = TweenService:Create(uiFrame, TweenInfo.new(0.3), {BackgroundTransparency = 0})
-	local fadeOut = TweenService:Create(uiFrame, TweenInfo.new(0.3), {BackgroundTransparency = 1})
-	
-	local strokeIn = TweenService:Create(stroke, TweenInfo.new(0.3), {Transparency = 0})
-	local strokeOut = TweenService:Create(stroke, TweenInfo.new(0.3), {Transparency = 1})
-	
-	local slideIn = TweenService:Create(uiFrame, TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-		Position = UDim2.new(1, -10, 1, -10)
-	})
-	
-	local slideOut = TweenService:Create(uiFrame, TweenInfo.new(0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {
-		Position = UDim2.new(1, 200, 1, -10)
-	})
-	
-	fadeIn:Play()
-	strokeIn:Play()
-	slideIn:Play()
-	slideIn.Completed:Wait()
-	
-	wait(2)
-	
-	fadeOut:Play()
-	strokeOut:Play()
-	slideOut:Play()
-	
-end
-coroutine.wrap(KUUEUW_script)()
+coroutine.wrap(FHKK_script)()
