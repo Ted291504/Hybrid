@@ -14,7 +14,6 @@ setreadonly(client, true);
 getgenv().client = nil
 
 _enableautoexec()
-
 local Hybrid_new = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
@@ -438,7 +437,7 @@ Open.Image = "rbxassetid://72310455670962"
 
 -- Scripts:
 
-local function OISGE_script() -- TextSig.LocalScript 
+local function UNSJT_script() -- TextSig.LocalScript 
 	local script = Instance.new('LocalScript', TextSig)
 
 	local textBox = script.Parent
@@ -567,32 +566,32 @@ local function OISGE_script() -- TextSig.LocalScript
 		end)
 	end)
 end
-coroutine.wrap(OISGE_script)()
-local function LEOBSUB_script() -- Execute.LocalScript 
+coroutine.wrap(UNSJT_script)()
+local function NTWAQV_script() -- Execute.LocalScript 
 	local script = Instance.new('LocalScript', Execute)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		loadstring(script.Parent.Parent.Parent.TextSig.Text)()
 	end)
 end
-coroutine.wrap(LEOBSUB_script)()
-local function FSJR_script() -- Clear.LocalScript 
+coroutine.wrap(NTWAQV_script)()
+local function HRCIF_script() -- Clear.LocalScript 
 	local script = Instance.new('LocalScript', Clear)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Parent.TextSig.Text = ""
 	end)
 end
-coroutine.wrap(FSJR_script)()
-local function CIZH_script() -- Paste.LocalScript 
+coroutine.wrap(HRCIF_script)()
+local function DXHKHH_script() -- Paste.LocalScript 
 	local script = Instance.new('LocalScript', Paste)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Parent.TextSig.Text = getclipboard()
 	end)
 end
-coroutine.wrap(CIZH_script)()
-local function KNADRPA_script() -- Editor_Button.LocalScript 
+coroutine.wrap(DXHKHH_script)()
+local function SJGXNK_script() -- Editor_Button.LocalScript 
 	local script = Instance.new('LocalScript', Editor_Button)
 
 	local button = script.Parent
@@ -606,8 +605,8 @@ local function KNADRPA_script() -- Editor_Button.LocalScript
 		console.Visible =  false
 	end)
 end
-coroutine.wrap(KNADRPA_script)()
-local function UTWX_script() -- Home_Button.LocalScript 
+coroutine.wrap(SJGXNK_script)()
+local function EWLV_script() -- Home_Button.LocalScript 
 	local script = Instance.new('LocalScript', Home_Button)
 
 	local button = script.Parent
@@ -621,8 +620,8 @@ local function UTWX_script() -- Home_Button.LocalScript
 		console.Visible =  false
 	end)
 end
-coroutine.wrap(UTWX_script)()
-local function MILTZJ_script() -- Console_Button.LocalScript 
+coroutine.wrap(EWLV_script)()
+local function JIEGAK_script() -- Console_Button.LocalScript 
 	local script = Instance.new('LocalScript', Console_Button)
 
 	local button = script.Parent
@@ -636,8 +635,8 @@ local function MILTZJ_script() -- Console_Button.LocalScript
 		console.Visible =  true
 	end)
 end
-coroutine.wrap(MILTZJ_script)()
-local function MXPIZKW_script() -- Close.LocalScript 
+coroutine.wrap(JIEGAK_script)()
+local function OSHVH_script() -- Close.LocalScript 
 	local script = Instance.new('LocalScript', Close)
 
 	script.Parent.MouseButton1Click:Connect(function() 
@@ -645,8 +644,8 @@ local function MXPIZKW_script() -- Close.LocalScript
 		script.Parent.Parent.Parent.Parent.Open.Visible = true
 	end)
 end
-coroutine.wrap(MXPIZKW_script)()
-local function HBAVOC_script() -- Version.LocalScript 
+coroutine.wrap(OSHVH_script)()
+local function IDFFXUU_script() -- Version.LocalScript 
 	local script = Instance.new('LocalScript', Version)
 
 	local HttpService = game:GetService("HttpService")
@@ -667,8 +666,8 @@ local function HBAVOC_script() -- Version.LocalScript
 	
 	txt.Text = "V"..version
 end
-coroutine.wrap(HBAVOC_script)()
-local function AHOAT_script() -- Results.LocalScript 
+coroutine.wrap(IDFFXUU_script)()
+local function WOUIU_script() -- Results.LocalScript 
 	local script = Instance.new('LocalScript', Results)
 
 	local consoleFrame = script.Parent
@@ -706,8 +705,8 @@ local function AHOAT_script() -- Results.LocalScript
 		addLog(message, messageType)
 	end)
 end
-coroutine.wrap(AHOAT_script)()
-local function KJDTC_script() -- Main.LocalScript 
+coroutine.wrap(WOUIU_script)()
+local function PKCX_script() -- Main.LocalScript 
 	local script = Instance.new('LocalScript', Main)
 
 	local UIS = game:GetService('UserInputService')
@@ -745,4 +744,15 @@ local function KJDTC_script() -- Main.LocalScript
 		end
 	end)
 end
-coroutine.wrap(KJDTC_script)()
+coroutine.wrap(PKCX_script)()
+local function LAFOUL_script() -- Open.LocalScript 
+	local script = Instance.new('LocalScript', Open)
+
+	local button = script.Parent
+	local Main = button.Parent.Main
+	button.MouseButton1Click:Connect(function()
+		button.Visible = false
+		Main.Visible = true
+	end)
+end
+coroutine.wrap(LAFOUL_script)()
