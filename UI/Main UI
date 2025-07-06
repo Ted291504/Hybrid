@@ -100,7 +100,7 @@ local function FHKK_script() -- Loading.LocalScript
 		NotificationLib.showNotification("Loading Main UI...", "Please Wait...", 3)
 		task.wait(3)
 		Hybrid_Loader:Destroy()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Main%20UI", true))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/loader", true))()
 	elseif key_Info.success == false then
 		NotificationLib.showNotification("You do not have a valid key!", "Loading Main UI", 2)
 		task.wait(1)
@@ -109,14 +109,14 @@ local function FHKK_script() -- Loading.LocalScript
 		txt.Text = "Loading Key System"
 		task.wait(2)
 		Hybrid_Loader:Destroy()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Main%20UI", true))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/loader", true))()
 	else
 		NotificationLib.showNotification("Key is valid!", _G.time_left, 2)
 		formatText("Valid Key")
 		formatText("Loading Main UI")
 		task.wait(2)
 		Hybrid_Loader:Destroy()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Main%20UI", true))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/loader", true))()
 	end
 end
 coroutine.wrap(FHKK_script)()
