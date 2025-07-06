@@ -66,48 +66,57 @@ local function FHKK_script() -- Loading.LocalScript
 	local NotificationLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/main/UI/NotificationLib.lua", true))()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/main/API/Info.lua", true))()
 	local HttpService = game:GetService("HttpService")
-	
+
 	get_info()
-	
+
 	local key_Info = {
 		key_expiration = _G.key_expiration,
 		ip_address = _G.ip_address,
 		key = _G.Key,
 		time_left = _G.time_left,
 		success = _G.success,
-		blacklisted = _G.blacklisted
+		blacklisted = _G.blacklisted,
+		key_system_online = _G.system_online
 	}
-	
+
 	local function formatText(text)
 		txt.Text = text
 		task.wait(1)
 	end
-	
+
 	formatText("Checking Connection")
 	formatText("Connecting to Server")
 	formatText("Successfully Connected to Server")
 	formatText("Checking Key")
-	
+
+
+
 	if key_Info.blacklisted == true then
 		NotificationLib.showNotification("You are blacklisted!", "You Have Been Blacklisted!", 3)
 		wait(3)
 		game.Players.LocalPlayer:Kick("Blacklisted!")
-	elseif key_Info.success == true then
-		NotificationLib.showNotification("Key is valid!", _G.time_left, 2)
-		formatText("Valid Key")
-		formatText("Loading Main UI")
-		task.wait(2)
+	elseif key_Info.key_system_online == false then
+		NotificationLib.showNotification("Key System is Offline!", "The Key System has been disabled!", 5)
+		NotificationLib.showNotification("Loading Main UI...", "Please Wait...", 3)
+		task.wait(3)
+		Hybrid_Loader:Destroy()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Main%20UI", true))()
-		script.Parent.Parent.Parent:Destroy()
-	else
+	elseif key_Info.success == false then
 		NotificationLib.showNotification("You do not have a valid key!", "Loading Main UI", 2)
 		task.wait(1)
 		txt.Text = "Invalid Key"
 		task.wait(1)
 		txt.Text = "Loading Key System"
 		task.wait(2)
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Main%20UI", true))()
 		Hybrid_Loader:Destroy()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Main%20UI", true))()
+	else
+		NotificationLib.showNotification("Key is valid!", _G.time_left, 2)
+		formatText("Valid Key")
+		formatText("Loading Main UI")
+		task.wait(2)
+		Hybrid_Loader:Destroy()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/Main%20UI", true))()
 	end
 end
 coroutine.wrap(FHKK_script)()
