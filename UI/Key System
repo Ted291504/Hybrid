@@ -271,23 +271,23 @@ TextLabel.TextSize = 17.000
 
 -- Scripts:
 
-local function WPVRZI_script() -- Discord.LocalScript 
+local function WKYBW_script() -- Discord.LocalScript 
 	local script = Instance.new('LocalScript', Discord)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		setclipboard("https://discord.gg/2N2dxfjYEX")
 	end)
 end
-coroutine.wrap(WPVRZI_script)()
-local function GJLWJL_script() -- Get_Key.LocalScript 
+coroutine.wrap(WKYBW_script)()
+local function NSIBZH_script() -- Get_Key.LocalScript 
 	local script = Instance.new('LocalScript', Get_Key)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		setclipboard("https://keysystem-s10c.onrender.com/")
 	end)
 end
-coroutine.wrap(GJLWJL_script)()
-local function CVSNKAM_script() -- Check_Key.LocalScript 
+coroutine.wrap(NSIBZH_script)()
+local function FLEE_script() -- Check_Key.LocalScript 
 	local script = Instance.new('LocalScript', Check_Key)
 
 	local keytxt = script.Parent.Parent.Parent.Parent.TabsFrame.Sigma.Key_Enter
@@ -297,9 +297,10 @@ local function CVSNKAM_script() -- Check_Key.LocalScript
 	
 	local key_info_link = "https://keysystem-s10c.onrender.com/keyinfo/"
 	
-	function get_info()
 	
-		local key_info_url = key_info_link .. HttpService:UrlEncode(keytxt.Text)
+	function get_info(key)
+	
+		local key_info_url = key_info_link .. HttpService:UrlEncode(key)
 		local success, response = pcall(function()
 			return game:HttpGet(key_info_url)
 		end)
@@ -348,9 +349,13 @@ local function CVSNKAM_script() -- Check_Key.LocalScript
 	
 		return false
 	end
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		get_info(keytxt.Text)
+	end)
 end
-coroutine.wrap(CVSNKAM_script)()
-local function MGTN_script() -- Main_Frame.LocalScript 
+coroutine.wrap(FLEE_script)()
+local function RJYWHAI_script() -- Main_Frame.LocalScript 
 	local script = Instance.new('LocalScript', Main_Frame)
 
 	local UIS = game:GetService('UserInputService')
@@ -388,12 +393,12 @@ local function MGTN_script() -- Main_Frame.LocalScript
 		end
 	end)
 end
-coroutine.wrap(MGTN_script)()
-local function IGGZADW_script() -- Exit.LocalScript 
+coroutine.wrap(RJYWHAI_script)()
+local function VZXXA_script() -- Exit.LocalScript 
 	local script = Instance.new('LocalScript', Exit)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Parent:Destroy()
 	end)
 end
-coroutine.wrap(IGGZADW_script)()
+coroutine.wrap(VZXXA_script)()
