@@ -291,68 +291,75 @@ local function FLEE_script() -- Check_Key.LocalScript
 	local script = Instance.new('LocalScript', Check_Key)
 
 	local keytxt = script.Parent.Parent.Parent.Parent.TabsFrame.Sigma.Key_Enter
-	
-	
-	local HttpService = game:GetService("HttpService")
-	
-	local key_info_link = "https://keysystem-s10c.onrender.com/keyinfo/"
-	
-	
-	function get_info(key)
-	
-		local key_info_url = key_info_link .. HttpService:UrlEncode(key)
-		local success, response = pcall(function()
-			return game:HttpGet(key_info_url)
-		end)
-	
-		if not success or not response then
-			warn("Failed to fetch key info.")
-			return false
-		end
-	
-		local decodeSuccess, data = pcall(function()
-			return HttpService:JSONDecode(response)
-		end)
-	
-		if not decodeSuccess then
-			warn("Failed to decode JSON.")
-			return false
-		end
-	
-		if data.message == "Key system is offline" then
-			warn("Key system is offline!")
-			local system_online = false
-			local success = false
-			return false
-		else
-			local system_online = true
-		end
-	
-		if data.blacklisted then
-			local blacklisted = true
-			local success = false
-			return false
-		end
-	
-		if data.success then
-			print("Key is true")
-			local key_expiration = data.expiration or ""
-			local ip_address = data.ip_address or ""
-			local Key = data.key or ""
-			local time_left = data.time_left or ""
-			local success = true
-			return true
-		else
-			local NoInfoFound = true
-			local success = false
-		end
-	
+
+
+local HttpService = game:GetService("HttpService")
+
+local key_info_link = "https://keysystem-s10c.onrender.com/keyinfo/"
+
+
+function get_info(key)
+
+	local key_info_url = key_info_link .. HttpService:UrlEncode(key)
+	local success, response = pcall(function()
+		return game:HttpGet(key_info_url)
+	end)
+
+	if not success or not response then
+		warn("Failed to fetch key info.")
 		return false
 	end
-	
-	script.Parent.MouseButton1Click:Connect(function()
-		get_info(keytxt.Text)
+
+	local decodeSuccess, data = pcall(function()
+		return HttpService:JSONDecode(response)
 	end)
+
+	if not decodeSuccess then
+		warn("Failed to decode JSON.")
+		return false
+	end
+
+	if data.message == "Key system is offline" then
+		warn("Key system is offline!")
+		local system_online = false
+		local success = false
+		keytxt.Text = "Key System Is Offline "
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/loader", true))()
+		return false
+	else
+		local system_online = true
+	end
+
+	if data.blacklisted then
+		local blacklisted = true
+		local success = false
+		keytxt.Text = "Your blacklisted"
+		wait(2)
+		game.Players.LocalPlayer:Kick("Blacklisted!")
+		return false
+	end
+
+	if data.success then
+		local key_expiration = data.expiration or ""
+		local ip_address = data.ip_address or ""
+		local Key = data.key or ""
+		local time_left = data.time_left or ""
+		local success = true
+		keytxt.Text = "Valid Key"
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ted291504/Hybrid/refs/heads/main/UI/loader", true))()
+		return true
+	else
+		keytxt.Text = "Invalid Key"
+		local NoInfoFound = true
+		local success = false
+	end
+
+	return false
+end
+
+script.Parent.MouseButton1Click:Connect(function()
+	get_info(keytxt.Text)
+end)
 end
 coroutine.wrap(FLEE_script)()
 local function RJYWHAI_script() -- Main_Frame.LocalScript 
