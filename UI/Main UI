@@ -1,5 +1,7 @@
 -- # toast example:
 -- # maketoast("hello from toast")
+-- # aliases:
+-- # make_toast("hello from toast"), createtoast("hello from toast"), create_toast("hello from toast")
 
 if _G.hybridloaded then
 	warn("The GUI is already running!")
