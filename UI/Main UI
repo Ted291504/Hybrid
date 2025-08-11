@@ -1,5 +1,9 @@
+-- # toast example:
+-- # maketoast("hello from toast")
+
 if _G.hybridloaded then
 	warn("The GUI is already running!")
+    -- # maketoast("The GUI is already running")
 	return
 end
 
